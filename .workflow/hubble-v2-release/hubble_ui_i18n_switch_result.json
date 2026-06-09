@@ -1,0 +1,36 @@
+{
+  "started_at": "2026-06-09T05:28:46.558Z",
+  "status": "SUCCESS",
+  "browser": "chromium",
+  "hubble_url": "http://127.0.0.1:8088",
+  "checks": {
+    "hubble_preexisting": false,
+    "hubble_start": "Starting Hubble in daemon mode...\n.....OK\nlogging to /home/looksaw/hugegraph-toolchain/hugegraph-hubble/hubble-dist/apache-hugegraph-hubble-1.7.0/logs/hugegraph-hubble.log, please check it",
+    "hubble_health": {
+      "status": "UP"
+    },
+    "language_switch": {
+      "zh_before_storage": "zh-CN",
+      "en_after_storage": "en-US",
+      "zh_after_storage": "zh-CN",
+      "zh_before_text_sample": "图管理 中文 图管理 创建图 图ID SmokeConn_1780981142 图名称 hugegraph 主机名 127.0.0.1 端口号 8080 创建时间 2026-06-09 12:59:12 访 问 更 多",
+      "en_text_sample": "Graph Manager English Graph Manager Create Graph Graph ID SmokeConn_1780981142 Graph Name hugegraph Hostname 127.0.0.1 Port Number 8080 Creation Time 2026-06-09 12:59:12 Visit More",
+      "zh_after_text_sample": "图管理 中文 图管理 创建图 图ID SmokeConn_1780981142 图名称 hugegraph 主机名 127.0.0.1 端口号 8080 创建时间 2026-06-09 12:59:12 访 问 更 多",
+      "screenshots": [
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-i18n-switch-screenshots/zh-before-switch.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-i18n-switch-screenshots/en-after-switch.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-i18n-switch-screenshots/zh-after-switch-back.png"
+      ]
+    },
+    "console_errors": [],
+    "page_errors": [],
+    "failed_requests": [],
+    "severe_console_errors": [],
+    "severe_failed_requests": [],
+    "hubble_stop": [
+      "stopped HugeGraphHubble",
+      0
+    ]
+  },
+  "finished_at": "2026-06-09T05:29:02.592Z"
+}

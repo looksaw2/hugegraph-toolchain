@@ -1053,10 +1053,10 @@ const CheckAndEditVertex: React.FC = observer(() => {
                           {t('addition.menu.secondary-index')}
                         </Select.Option>
                         <Select.Option value="RANGE" key="RANGE">
-                          {t('addition.range.secondary-index')}
+                          {t('addition.menu.range-index')}
                         </Select.Option>
                         <Select.Option value="SEARCH" key="SEARCH">
-                          {t('addition.range.full-text-index')}
+                          {t('addition.menu.full-text-index')}
                         </Select.Option>
                       </Select>
                     </div>

@@ -24,9 +24,17 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         LineTest.class,
         DateUtilTest.class,
+        FailWriterTest.class,
+        InputProgressTest.class,
+        LoadMetricsTest.class,
+        FileLineFetcherTest.class,
+        FileReaderFactoryTest.class,
+        ElementBuilderTest.class,
         MappingConverterTest.class,
         LoadProgressTest.class,
-        RangesTimerTest.class
+        LoadOptionsTest.class,
+        RangesTimerTest.class,
+        TaskManagerTest.class
 })
 public class UnitTestSuite {
 }

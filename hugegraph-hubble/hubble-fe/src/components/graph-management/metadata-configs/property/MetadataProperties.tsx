@@ -52,7 +52,9 @@ import { useTranslation } from 'react-i18next';
 const styles = {
   button: {
     marginLeft: '12px',
-    width: 78
+    width: 'auto',
+    minWidth: 78,
+    whiteSpace: 'nowrap' as const
   },
   extraMargin: {
     marginRight: 4
@@ -880,14 +882,20 @@ const EmptyPropertyHints: React.FC = observer(() => {
       <div
         style={{
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          gap: 16,
           marginTop: 24
         }}
       >
         <Button
           type="primary"
           size="large"
-          style={{ width: 112, marginRight: 16 }}
+          style={{
+            width: 'auto',
+            minWidth: 112,
+            whiteSpace: 'nowrap'
+          }}
           onClick={() => {
             metadataPropertyStore.switchIsCreateNewProperty(true);
             metadataPropertyStore.changeCurrentTabStatus('list');
@@ -897,7 +905,11 @@ const EmptyPropertyHints: React.FC = observer(() => {
         </Button>
         <Button
           size="large"
-          style={{ width: 144 }}
+          style={{
+            width: 'auto',
+            minWidth: 144,
+            whiteSpace: 'nowrap'
+          }}
           onClick={() => {
             metadataPropertyStore.changeCurrentTabStatus('reuse');
           }}

@@ -75,36 +75,39 @@
     }
 
     &-status-wrapper {
-      height: 28px;
+      min-width: 58px;
+      min-height: 28px;
+      padding: 0 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
       text-align: center;
       border-radius: 2px;
-      line-height: 28px;
+      line-height: 20px;
       font-size: 14px;
+      white-space: nowrap;
     }
 
     &-status-pending {
-      width: 58px;
       border: 1px solid #e0e0e0;
       background-color: #f5f5f5;
       color: #333;
     }
 
     &-status-process {
-      width: 58px;
       background-color: #f2f7ff;
       border: 1px solid #8cb8ff;
       color: #3d88f2;
     }
 
     &-status-failed {
-      width: 44px;
       border: 1px solid #ff9499;
       background-color: #fff2f2;
       color: #e64552;
     }
 
     &-status-success {
-      width: 44px;
       border: 1px solid #7ed988;
       background-color: #f2fff4;
       color: #39bf45;

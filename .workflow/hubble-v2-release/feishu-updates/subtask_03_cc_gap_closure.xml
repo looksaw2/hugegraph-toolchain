@@ -1,0 +1,23 @@
+<hr/>
+<h2>CC Gap Closure - 2026-06-09</h2>
+<callout background-color="light-green" border-color="green" text-color="green">
+  <p>The real Hubble + Server import/query smoke passed on the final candidate. Dataset archives remain local-only inputs unless provenance and redistribution terms are confirmed for ASF release use.</p>
+</callout>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Check</th>
+      <th background-color="light-gray">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Command</td><td><code>python3 .workflow/hubble-v2-release/run_live_hubble_smoke.py</code></td></tr>
+    <tr><td>Status</td><td><code>SUCCESS</code></td></tr>
+    <tr><td>Suffix</td><td><code>1780981142</code></td></tr>
+    <tr><td>Import</td><td>job <code>1</code> status <code>SUCCESS</code>, task <code>1</code> status <code>SUCCEED</code></td></tr>
+    <tr><td>Gremlin counts</td><td>Hubble V/E <code>41</code>/<code>51</code>, Server V/E <code>41</code>/<code>51</code></td></tr>
+    <tr><td>shortestPath</td><td>Hubble graph_view V/E <code>6</code>/<code>5</code>, Server traverser V/E <code>6</code>/<code>5</code>, path length <code>6</code></td></tr>
+    <tr><td>Schema compare</td><td>Hubble-created property key, vertex label, and edge label were visible through direct Server schema endpoints with matching core fields</td></tr>
+  </tbody>
+</table>
+<p><code>dataset/hlm.zip</code> and <code>dataset/movie 2.zip</code> are ignored by default and are not included in the Hubble binary candidate.</p>

@@ -1,0 +1,219 @@
+{
+  "started_at": "2026-06-09T18:49:58+0800",
+  "status": "SUCCESS",
+  "hubble_url": "http://127.0.0.1:8088",
+  "server_url": "http://127.0.0.1:8080",
+  "smoke_suffix": "1781002198",
+  "checks": {
+    "hubble_start": {
+      "code": 0,
+      "output": "Starting Hubble in daemon mode...\n.....OK\nlogging to /home/looksaw/hugegraph-toolchain/hugegraph-hubble/hubble-dist/apache-hugegraph-hubble-1.7.0/logs/hugegraph-hubble.log, please check it"
+    },
+    "hubble_health": {
+      "status": "UP"
+    },
+    "connection": {
+      "id": 1,
+      "name": "AlgorithmApiInventory",
+      "graph": "hugegraph",
+      "host": "127.0.0.1",
+      "port": 8080,
+      "mode": "created"
+    },
+    "smoke_graph": {
+      "vertex_label": "AlgoVertex_1781002198",
+      "edge_label": "AlgoEdge_1781002198",
+      "weight_property": "algo_weight_1781002198",
+      "vertices": 6,
+      "edges": 9,
+      "ids": {
+        "a": "a_1781002198",
+        "b": "b_1781002198",
+        "c": "c_1781002198",
+        "d": "d_1781002198",
+        "e": "e_1781002198",
+        "f": "f_1781002198",
+        "edge_label": "AlgoEdge_1781002198",
+        "vertex_label": "AlgoVertex_1781002198",
+        "weight": "algo_weight_1781002198"
+      }
+    },
+    "algorithm_results": [
+      {
+        "url": "shortestPath",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 2,
+        "graph_edges": 1,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[\"a_1781002198\",\"d_1781002198\"]},\"table_view\":{\"header\":[\"path\"],\"rows\":[{\"path\":[\"a_1781002198\",\"d_1781002198\"]}]},\"graph_view\":{\"vertices\":[{\"id\":\"a_1781002198\",\"label\":\"AlgoVertex_1781002198\",\"properties\":{\"algo_name_1781002198\":\"A\",\"algo_group_1781002198\":\"left\"}},{\"id\":\"d_1781002198\",\"label\":\"AlgoVertex_1781002198\",\"properties\":{\"algo_name_1781002198\":\"D\",\"algo_group_1781002198\":\"right\"}}],\"edges\":[{\"id\":\"Sd_1781002198>74>74>>Sa_178100"
+      },
+      {
+        "url": "shortpath",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 2,
+        "graph_edges": 1,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[\"a_1781002198\",\"d_1781002198\"]},\"table_view\":{\"header\":[\"path\"],\"rows\":[{\"path\":[\"a_1781002198\",\"d_1781002198\"]}]},\"graph_view\":{\"vertices\":[{\"id\":\"a_1781002198\",\"label\":\"AlgoVertex_1781002198\",\"properties\":{\"algo_name_1781002198\":\"A\",\"algo_group_1781002198\":\"left\"}},{\"id\":\"d_1781002198\",\"label\":\"AlgoVertex_1781002198\",\"properties\":{\"algo_name_1781002198\":\"D\",\"algo_group_1781002198\":\"right\"}}],\"edges\":[{\"id\":\"Sd_1781002198>74>74>>Sa_178100"
+      },
+      {
+        "url": "allshortpath",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 2,
+        "graph_edges": 1,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[{\"labels\":[],\"objects\":[\"a_1781002198\",\"d_1781002198\"],\"crosspoint\":null}]},\"table_view\":{\"header\":[\"path\"],\"rows\":[{\"path\":[\"a_1781002198\",\"d_1781002198\"]}]},\"graph_view\":{\"vertices\":[{\"id\":\"a_1781002198\",\"label\":\"AlgoVertex_1781002198\",\"properties\":{\"algo_name_1781002198\":\"A\",\"algo_group_1781002198\":\"left\"}},{\"id\":\"d_1781002198\",\"label\":\"AlgoVertex_1781002198\",\"properties\":{\"algo_name_1781002198\":\"D\",\"algo_group_1781002198\":\"right\"}}],\"e"
+      },
+      {
+        "url": "paths",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 6,
+        "graph_edges": 0,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[{\"labels\":[],\"objects\":[\"a_1781002198\",\"f_1781002198\",\"b_1781002198\",\"c_1781002198\",\"d_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"b_1781002198\",\"c_1781002198\",\"d_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"d_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"f_1781002198\",\"c_1781002198\",\"d_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"b_"
+      },
+      {
+        "url": "rings",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 6,
+        "graph_edges": 9,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[{\"labels\":[],\"objects\":[\"a_1781002198\",\"f_1781002198\",\"c_1781002198\",\"b_1781002198\",\"a_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"f_1781002198\",\"c_1781002198\",\"d_1781002198\",\"a_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"d_1781002198\",\"c_1781002198\",\"b_1781002198\",\"a_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"e_1781002198\",\"b_1781002198\",\"a_1781002198\"],\""
+      },
+      {
+        "url": "crosspoints",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 6,
+        "graph_edges": 0,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[{\"labels\":[],\"objects\":[\"a_1781002198\",\"d_1781002198\",\"c_1781002198\",\"b_1781002198\"],\"crosspoint\":\"c_1781002198\"},{\"labels\":[],\"objects\":[\"a_1781002198\",\"b_1781002198\"],\"crosspoint\":\"b_1781002198\"},{\"labels\":[],\"objects\":[\"a_1781002198\",\"d_1781002198\",\"c_1781002198\",\"f_1781002198\",\"b_1781002198\"],\"crosspoint\":\"c_1781002198\"},{\"labels\":[],\"objects\":[\"a_1781002198\",\"f_1781002198\",\"c_1781002198\",\"b_1781002198\"],\"crosspoint\":\"c_1781002198\"},{\""
+      },
+      {
+        "url": "fsimilarity",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "GENERAL",
+        "graph_vertices": null,
+        "graph_edges": null,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"GENERAL\",\"json_view\":{\"data\":[{\"similars\":{\"a_1781002198\":[{\"id\":\"c_1781002198\",\"score\":0.75,\"intermediaries\":[\"b_1781002198\",\"d_1781002198\",\"f_1781002198\"]},{\"id\":\"b_1781002198\",\"score\":0.5,\"intermediaries\":[\"f_1781002198\",\"e_1781002198\"]}],\"b_1781002198\":[{\"id\":\"d_1781002198\",\"score\":0.5,\"intermediaries\":[\"c_1781002198\",\"a_1781002198\"]},{\"id\":\"f_1781002198\",\"score\":0.5,\"intermediaries\":[\"c_1781002198\",\"a_1781002198\"]},{\"id\":\"a_1781002198\",\"score\":0.5,\"intermediari"
+      },
+      {
+        "url": "neighborrank",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "GENERAL",
+        "graph_vertices": null,
+        "graph_edges": null,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"GENERAL\",\"json_view\":{\"data\":[{\"ranks\":[{\"a_1781002198\":1.0},{\"b_1781002198\":0.2125,\"d_1781002198\":0.2125,\"e_1781002198\":0.2125,\"f_1781002198\":0.2125}],\"measure\":null,\"personal_rank\":null}]},\"table_view\":{\"header\":[\"result\"],\"rows\":[{\"result\":{\"ranks\":[{\"a_1781002198\":1.0},{\"b_1781002198\":0.2125,\"d_1781002198\":0.2125,\"e_1781002198\":0.2125,\"f_1781002198\":0.2125}],\"measure\":null,\"personal_rank\":null}}]},\"graph_view\":{\"vertices\":null,\"edges\":null}},\"message\":null,\"caus"
+      },
+      {
+        "url": "kneighbor",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 6,
+        "graph_edges": 5,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[{\"labels\":[],\"objects\":[\"a_1781002198\",\"b_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"e_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"b_1781002198\",\"c_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"d_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"f_1781002198\"],\"crosspoint\":null}]},\"table_view\":{\"header\":[\"path\"],\"rows\":[{\"path\":[\"a_1781"
+      },
+      {
+        "url": "kout",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 0,
+        "graph_edges": 0,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[]},\"table_view\":{\"header\":[\"path\"],\"rows\":[]},\"graph_view\":{\"vertices\":[],\"edges\":[]}},\"message\":null,\"cause\":null}"
+      },
+      {
+        "url": "customizedpaths",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 5,
+        "graph_edges": 4,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[{\"objects\":[\"a_1781002198\",\"b_1781002198\"],\"weights\":null},{\"objects\":[\"a_1781002198\",\"d_1781002198\"],\"weights\":null},{\"objects\":[\"a_1781002198\",\"f_1781002198\"],\"weights\":null},{\"objects\":[\"a_1781002198\",\"e_1781002198\"],\"weights\":null}]},\"table_view\":{\"header\":[\"path\"],\"rows\":[{\"path\":[\"a_1781002198\",\"b_1781002198\"]},{\"path\":[\"a_1781002198\",\"d_1781002198\"]},{\"path\":[\"a_1781002198\",\"f_1781002198\"]},{\"path\":[\"a_1781002198\",\"e_1781002198\"]}]}"
+      },
+      {
+        "url": "rays",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 6,
+        "graph_edges": 9,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[{\"labels\":[],\"objects\":[\"a_1781002198\",\"e_1781002198\",\"b_1781002198\",\"c_1781002198\",\"f_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"f_1781002198\",\"b_1781002198\",\"c_1781002198\",\"d_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"d_1781002198\",\"c_1781002198\",\"f_1781002198\",\"b_1781002198\"],\"crosspoint\":null},{\"labels\":[],\"objects\":[\"a_1781002198\",\"d_1781002198\",\"c_1781002198\",\"b_1781002198\",\"e"
+      },
+      {
+        "url": "sameneighbors",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "GENERAL",
+        "graph_vertices": null,
+        "graph_edges": null,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"GENERAL\",\"json_view\":{\"data\":[{\"measure\":{\"edge_iterations\":8,\"vertice_iterations\":2,\"cost(ns)\":249300},\"same_neighbors\":[\"e_1781002198\",\"f_1781002198\"]}]},\"table_view\":{\"header\":[\"result\"],\"rows\":[{\"result\":{\"measure\":{\"edge_iterations\":8,\"vertice_iterations\":2,\"cost(ns)\":249300},\"same_neighbors\":[\"e_1781002198\",\"f_1781002198\"]}}]},\"graph_view\":{\"vertices\":null,\"edges\":null}},\"message\":null,\"cause\":null}"
+      },
+      {
+        "url": "weightedshortpath",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 2,
+        "graph_edges": 1,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[{\"weight\":1.0,\"vertices\":[\"a_1781002198\",\"d_1781002198\"]}]},\"table_view\":{\"header\":[\"path\"],\"rows\":[{\"path\":[\"a_1781002198\",\"d_1781002198\"]}]},\"graph_view\":{\"vertices\":[{\"id\":\"a_1781002198\",\"label\":\"AlgoVertex_1781002198\",\"properties\":{\"algo_name_1781002198\":\"A\",\"algo_group_1781002198\":\"left\"}},{\"id\":\"d_1781002198\",\"label\":\"AlgoVertex_1781002198\",\"properties\":{\"algo_name_1781002198\":\"D\",\"algo_group_1781002198\":\"right\"}}],\"edges\":[{\"id\":\"Sd"
+      },
+      {
+        "url": "singleshortpath",
+        "http_status": 200,
+        "business_status": 200,
+        "message": "",
+        "data_type": "PATH",
+        "graph_vertices": 6,
+        "graph_edges": 5,
+        "raw_sample": "{\"status\":200,\"data\":{\"type\":\"PATH\",\"json_view\":{\"data\":[{\"f_1781002198\":{\"weight\":3.0,\"vertices\":[\"a_1781002198\",\"f_1781002198\"]}},{\"e_1781002198\":{\"weight\":2.0,\"vertices\":[\"a_1781002198\",\"e_1781002198\"]}},{\"c_1781002198\":{\"weight\":2.0,\"vertices\":[\"a_1781002198\",\"b_1781002198\",\"c_1781002198\"]}},{\"b_1781002198\":{\"weight\":1.0,\"vertices\":[\"a_1781002198\",\"b_1781002198\"]}},{\"d_1781002198\":{\"weight\":1.0,\"vertices\":[\"a_1781002198\",\"d_1781002198\"]}}]},\"table_view\":{\"header\":[\"path\"],\"rows\":[{\"path\":[\"a"
+      },
+      {
+        "url": "jaccardsimilarity",
+        "http_status": 200,
+        "business_status": 400,
+        "message": "Failed to deserialize: {\"jaccard_similarity\":0.3333333333333333,\"measure\":{\"edge_iterations\":8,\"vertice_iterations\":2,\"cost(ns)\":312800}}",
+        "data_type": null,
+        "graph_vertices": null,
+        "graph_edges": null,
+        "raw_sample": "{\"status\":400,\"data\":null,\"message\":\"Failed to deserialize: {\\\"jaccard_similarity\\\":0.3333333333333333,\\\"measure\\\":{\\\"edge_iterations\\\":8,\\\"vertice_iterations\\\":2,\\\"cost(ns)\\\":312800}}\",\"cause\":\"com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.util.LinkedHashMap<java.lang.Object,java.lang.Object>` from Floating-point value (token `JsonToken.VALUE_NUMBER_FLOAT`)\\n at [Source: (String)\\\"{\\\"jaccard_similarity\\\":0.3333333333333333,\\\"measure\\\":{\\\"edg"
+      },
+      {
+        "url": "personalrank",
+        "http_status": 200,
+        "business_status": 400,
+        "message": "The edge label for personal rank must link different vertex labels",
+        "data_type": null,
+        "graph_vertices": null,
+        "graph_edges": null,
+        "raw_sample": "{\"status\":400,\"data\":null,\"message\":\"The edge label for personal rank must link different vertex labels\",\"cause\":null}"
+      }
+    ],
+    "hubble_stop": {
+      "code": 0,
+      "output": "stopped HugeGraphHubble"
+    }
+  },
+  "finished_at": "2026-06-09T18:50:15+0800"
+}

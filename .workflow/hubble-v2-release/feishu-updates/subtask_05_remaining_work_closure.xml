@@ -1,0 +1,21 @@
+<hr/>
+<h2>Remaining Work Closure - Algorithm API Gap - 2026-06-09</h2>
+<callout background-color="light-yellow" border-color="yellow" text-color="yellow">
+  <p>API gap inventory 已完成：Server-backed <code>shortestPath</code> 正常；非 shortestPath 的 FE 算法 slug 当前未被 Hubble BE POST API 接住，表现为 <code>405</code>。</p>
+</callout>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Area</th>
+      <th background-color="light-gray">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Verified endpoint</td><td><code>/api/v1.2/graph-connections/{connId}/algorithms/shortestPath</code> returned <code>PATH</code> with graph_view V/E <code>6/5</code></td></tr>
+    <tr><td>Source/target</td><td><code>贾太公_1780981142 -> 贾蓉_1780981142</code></td></tr>
+    <tr><td>FE slug count</td><td><code>16</code> non-shortestPath slugs checked</td></tr>
+    <tr><td>Observed status</td><td>All 16 returned HTTP/business <code>405</code>, <code>Request method 'POST' not supported</code></td></tr>
+    <tr><td>Classification</td><td>Hubble UI/API integration gap or product-boundary issue; not a demonstrated Server traverser failure</td></tr>
+  </tbody>
+</table>
+<p>This pass records the gap for release decision-making and does not implement missing algorithm routes.</p>

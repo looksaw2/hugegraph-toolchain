@@ -25,22 +25,17 @@ import java.util.stream.Collectors;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hugegraph.util.E;
-import org.apache.hugegraph.util.Log;
-import org.slf4j.Logger;
 
 import org.apache.hugegraph.driver.HugeClient;
-import org.apache.hugegraph.pd.client.DiscoveryClient;
-import org.apache.hugegraph.pd.client.DiscoveryClientImpl;
-import org.apache.hugegraph.pd.client.PDConfig;
-import org.apache.hugegraph.pd.grpc.discovery.NodeInfos;
-import org.apache.hugegraph.pd.grpc.discovery.Query;
-import com.google.common.collect.ImmutableMap;
 
 import lombok.SneakyThrows;
 
+/**
+ * PD (Platform Discovery) based client factory.
+ * Uses reflection to load PD classes at runtime, supporting both Java 8 and
+ * Java 11 environments.
+ */
 public class PDHugeClientFactory {
-
-    private static final Logger LOG = Log.logger(PDHugeClientFactory.class);
 
     public static final String DEFAULT_GRAPHSPACE = "DEFAULT";
     public static final String DEFAULT_SERVICE = "DEFAULT";
@@ -49,9 +44,29 @@ public class PDHugeClientFactory {
             "$2a$04$i10KooNg6wLvIPVDh909n.RBYlZ/4pJo978nFK86nrqQiGIKV4UGS";
 
     protected static final String SERVICE_VERSION = "1.0.0";
+
+    private static final String PD_CONFIG_CLASS =
+            "org.apache.hugegraph.pd.client.PDConfig";
+    private static final String DISCOVERY_CLIENT_IMPL_CLASS =
+            "org.apache.hugegraph.pd.client.DiscoveryClientImpl";
+    private static final String QUERY_CLASS =
+            "org.apache.hugegraph.pd.grpc.discovery.Query";
+
     protected final String pdAddrs;
     protected final RouteType type;
-    protected final DiscoveryClient client;
+    protected final Object client;
+
+    /**
+     * Check if PD dependencies are available on the classpath.
+     */
+    public static boolean isAvailable() {
+        try {
+            Class.forName(DISCOVERY_CLIENT_IMPL_CLASS);
+            return true;
+        } catch (ClassNotFoundException e) {
+            return false;
+        }
+    }
 
     public PDHugeClientFactory(String pdAddrs) {
         this(pdAddrs, null);
@@ -62,12 +77,28 @@ public class PDHugeClientFactory {
         this.pdAddrs = pdAddrs;
         this.type = type != null ? RouteType.valueOf(type) : RouteType.BOTH;
 
-        PDConfig pdConfig = PDConfig.of(pdAddrs);
-        // TODO: Not suport now: pdConfig.setAuthority(NAME, TOKEN);
-        this.client = DiscoveryClientImpl.newBuilder()
-                                                    // TODO: Not suport now: .setPdConfig(pdConfig)
-                                                    .setCenterAddress(pdAddrs)
-                                                    .build();
+        E.checkArgument(isAvailable(),
+                        "PD (Platform Discovery) client is not available. " +
+                        "Ensure hg-pd-client and hg-pd-grpc dependencies " +
+                        "are on the classpath.");
+
+        Class<?> pdConfigClass = Class.forName(PD_CONFIG_CLASS);
+        // Validate PDConfig is loadable
+        pdConfigClass.getMethod("of", String.class);
+
+        Class<?> discoveryClientImplClass =
+                Class.forName(DISCOVERY_CLIENT_IMPL_CLASS);
+        Object builder = discoveryClientImplClass
+                .getMethod("newBuilder")
+                .invoke(null);
+        builder = builder.getClass()
+                .getMethod("setCenterAddress", String.class)
+                .invoke(builder, pdAddrs);
+        this.client = builder.getClass()
+                .getMethod("build")
+                .invoke(builder);
+
+        // TODO: Not support now: pdConfig.setAuthority(NAME, TOKEN);
     }
 
     public HugeClient createUnauthClient(String cluster, String graphSpace,
@@ -117,9 +148,6 @@ public class PDHugeClientFactory {
 
         List<String> urls = getAutoURLs(cluster, graphSpace, graph);
 
-        DefaultHugeClientFactory defaultFactory =
-                new DefaultHugeClientFactory(urls.toArray(new String[0]));
-
         int r = (int) Math.floor(Math.random() * urls.size());
         String address = urls.get(r);
         if (!address.startsWith("http")) {
@@ -142,7 +170,6 @@ public class PDHugeClientFactory {
         List<String> urls = null;
         if (StringUtils.isNotEmpty(graphSpace)) {
             if (StringUtils.isNotEmpty(service)) {
-                // Get urls From service
                 urls = getURLs(cluster, graphSpace, service);
             }
 
@@ -150,7 +177,6 @@ public class PDHugeClientFactory {
                 return urls;
             }
 
-            // Get Url from graphspace
             urls = getURLs(cluster, graphSpace, null);
             if (CollectionUtils.isNotEmpty(urls)) {
                 return urls;
@@ -162,13 +188,14 @@ public class PDHugeClientFactory {
         return urls;
     }
 
+    @SneakyThrows
     public List<String> getURLs(String cluster, String graphSpace,
                                 String service) {
 
         E.checkArgument(StringUtils.isNotEmpty(graphSpace), "list urls" +
                 " error, cluster must not null");
 
-        Map<String, String>  configs = new HashMap<>();
+        Map<String, String> configs = new HashMap<>();
         if (StringUtils.isNotEmpty(graphSpace)) {
             configs.put("GRAPHSPACE", graphSpace);
         }
@@ -180,41 +207,92 @@ public class PDHugeClientFactory {
             configs.put("REGISTER_TYPE", this.type.name());
         }
 
-        Query query = Query.newBuilder().setAppName(cluster)
-                           .putAllLabels(configs)
-                           .build();
+        Class<?> queryClass = Class.forName(QUERY_CLASS);
+        Object queryBuilder = queryClass.getMethod("newBuilder").invoke(null);
+        queryBuilder = queryBuilder.getClass()
+                .getMethod("setAppName", String.class)
+                .invoke(queryBuilder, cluster);
+        queryBuilder = queryBuilder.getClass()
+                .getMethod("putAllLabels", Map.class)
+                .invoke(queryBuilder, configs);
+        Object query = queryBuilder.getClass()
+                .getMethod("build")
+                .invoke(queryBuilder);
 
-        NodeInfos nodeInfos = client.getNodeInfos(query);
+        Object nodeInfos = this.client.getClass()
+                .getMethod("getNodeInfos", query.getClass())
+                .invoke(this.client, query);
 
-        List<String> urls = nodeInfos.getInfoList().stream()
-                                     .map(nodeInfo -> nodeInfo.getAddress())
-                                     .collect(Collectors.toList());
+        @SuppressWarnings("unchecked")
+        List<Object> infoList = (List<Object>) nodeInfos.getClass()
+                .getMethod("getInfoList")
+                .invoke(nodeInfos);
 
-        return urls;
+        return infoList.stream()
+                .map(nodeInfo -> {
+                    try {
+                        return (String) nodeInfo.getClass()
+                                .getMethod("getAddress")
+                                .invoke(nodeInfo);
+                    } catch (Exception e) {
+                        throw new RuntimeException(
+                                "Failed to get address from NodeInfo", e);
+                    }
+                })
+                .collect(Collectors.toList());
     }
 
+    @SuppressWarnings("unchecked")
+    @SneakyThrows
     protected List<String> getURLsWithConfig(String cluster,
                                              Map<String, String> configs) {
 
         if (null == configs) {
-            configs = ImmutableMap.of();
+            configs = new HashMap<>();
         }
-        Query query = Query.newBuilder().setAppName(cluster)
-                           .setVersion(SERVICE_VERSION)
-                           .putAllLabels(configs)
-                           .build();
 
-        NodeInfos nodeInfos = client.getNodeInfos(query);
+        Class<?> queryClass = Class.forName(QUERY_CLASS);
+        Object queryBuilder = queryClass.getMethod("newBuilder").invoke(null);
+        queryBuilder = queryBuilder.getClass()
+                .getMethod("setAppName", String.class)
+                .invoke(queryBuilder, cluster);
+        queryBuilder = queryBuilder.getClass()
+                .getMethod("setVersion", String.class)
+                .invoke(queryBuilder, SERVICE_VERSION);
+        queryBuilder = queryBuilder.getClass()
+                .getMethod("putAllLabels", Map.class)
+                .invoke(queryBuilder, configs);
+        Object query = queryBuilder.getClass()
+                .getMethod("build")
+                .invoke(queryBuilder);
 
-        List<String> urls = nodeInfos.getInfoList().stream()
-                                     .map(nodeInfo -> nodeInfo.getAddress())
-                                     .collect(Collectors.toList());
+        Object nodeInfos = this.client.getClass()
+                .getMethod("getNodeInfos", query.getClass())
+                .invoke(this.client, query);
 
-        return urls;
+        List<Object> infoList = (List<Object>) nodeInfos.getClass()
+                .getMethod("getInfoList")
+                .invoke(nodeInfos);
+
+        return infoList.stream()
+                .map(nodeInfo -> {
+                    try {
+                        return (String) nodeInfo.getClass()
+                                .getMethod("getAddress")
+                                .invoke(nodeInfo);
+                    } catch (Exception e) {
+                        throw new RuntimeException(
+                                "Failed to get address from NodeInfo", e);
+                    }
+                })
+                .collect(Collectors.toList());
     }
 
+    @SneakyThrows
     public void close() {
-        this.client.close();
+        this.client.getClass()
+                .getMethod("close")
+                .invoke(this.client);
     }
 
     public enum RouteType {

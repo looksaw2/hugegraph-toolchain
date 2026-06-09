@@ -1,0 +1,68 @@
+{
+  "suffix": "1781000742",
+  "started_at": "2026-06-09 18:25:42 +0800",
+  "status": "SUCCESS",
+  "checks": {
+    "hubble_start": "Starting Hubble in daemon mode...\n.......OK\nlogging to /home/looksaw/hugegraph-toolchain/hugegraph-hubble/hubble-dist/apache-hugegraph-hubble-1.7.0/logs/hugegraph-hubble.log, please check it",
+    "data_file": "/tmp/hubble-live-smoke-1781000742/HLM_SMOKE_1781000742.TXT",
+    "conn_id": 1,
+    "connection_mode": "reused",
+    "schema": {
+      "property_keys": {
+        "name": "smoke_name_1781000742",
+        "sex": "smoke_sex_1781000742",
+        "age": "smoke_age_1781000742",
+        "title": "smoke_title_1781000742",
+        "feature": "smoke_feature_1781000742",
+        "relation": "smoke_relation_1781000742"
+      },
+      "vertex_label": "SmokePerson_1781000742",
+      "edge_label": "SmokeRelation_1781000742"
+    },
+    "import": {
+      "job_id": 1,
+      "task_id": 1,
+      "job_status": "SUCCESS",
+      "task_status": "SUCCEED",
+      "loaded_vertices": null,
+      "loaded_edges": null,
+      "total_lines": null
+    },
+    "gremlin_counts": {
+      "hubble_vertices": 41,
+      "hubble_edges": 51,
+      "server_vertices": 41,
+      "server_edges": 51
+    },
+    "shortest_path": {
+      "hubble_type": "PATH",
+      "hubble_graph_vertices": 6,
+      "hubble_graph_edges": 5,
+      "server_vertices": 6,
+      "server_edges": 5,
+      "server_path_len": 6
+    },
+    "schema_compare": {
+      "property_key": {
+        "hubble": "smoke_name_1781000742",
+        "server": "smoke_name_1781000742",
+        "data_type_match": true
+      },
+      "vertex_label": {
+        "hubble": "SmokePerson_1781000742",
+        "server": "SmokePerson_1781000742",
+        "id_strategy_match": true
+      },
+      "edge_label": {
+        "hubble": "SmokeRelation_1781000742",
+        "server": "SmokeRelation_1781000742",
+        "source_target_match": true
+      }
+    },
+    "hubble_stop": [
+      "stopped HugeGraphHubble",
+      0
+    ]
+  },
+  "finished_at": "2026-06-09 18:26:01 +0800"
+}

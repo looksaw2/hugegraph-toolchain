@@ -78,19 +78,34 @@ agent_opts="-javaagent:${LIB_PATH}/jacocoagent.jar=includes=*,port=36320,destfil
 main_class="org.apache.hugegraph.HugeGraphHubble"
 args=${CONF_PATH}/hugegraph-hubble.properties
 log=${LOG_PATH}/hugegraph-hubble.log
+timeout_s=30
+server_host=$(read_property "${CONF_PATH}"/hugegraph-hubble.properties hubble.host)
+server_port=$(read_property "${CONF_PATH}"/hugegraph-hubble.properties hubble.port)
+server_host=$(probe_host "${server_host}")
+server_url="http://${server_host}:${server_port}/actuator/health"
+
+if [[ "$(probe_http_status "${server_url}")" == "200" ]]; then
+    echo "HugeGraphHubble is already healthy at ${server_url}, please stop it first!"
+    exit 1
+fi
 
 echo -n "starting HugeGraphHubble "
 nohup nice -n 0 java -server -Dfile.encoding=UTF-8 "${java_opts}" "${agent_opts}" -Dhubble.home.path="${HOME_PATH}" -cp "${class_path}" ${main_class} "${args}" > "${log}" 2>&1 < /dev/null &
 pid=$!
 echo ${pid} > "${PID_FILE}"
 
-timeout_s=30
-server_host=$(read_property "${CONF_PATH}"/hugegraph-hubble.properties hubble.host)
-server_port=$(read_property "${CONF_PATH}"/hugegraph-hubble.properties hubble.port)
-server_url="http://${server_host}:${server_port}/actuator/health"
-
 wait_for_startup "${server_url}" ${timeout_s} || {
+    rm -f "${PID_FILE}"
+    if kill -0 "${pid}" > /dev/null 2>&1; then
+        kill "${pid}" > /dev/null 2>&1 || true
+        wait "${pid}" 2>/dev/null || true
+    fi
     cat "${log}"
     exit 1
 }
+if ! kill -0 "${pid}" > /dev/null 2>&1; then
+    rm -f "${PID_FILE}"
+    echo "HugeGraphHubble exited before startup finished, please check ${log}" >&2
+    exit 1
+fi
 echo "logging to ${log}, please check it"

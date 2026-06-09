@@ -118,6 +118,16 @@ public class GraphSource extends AbstractSource {
     }
 
     public HugeClient createHugeClient() {
+        E.checkArgument(StringUtils.isNotEmpty(this.pdPeers),
+                        "pd-peers must not be empty when using GraphSource");
+
+        if (!PDHugeClientFactory.isAvailable()) {
+            throw new IllegalStateException(
+                    "PD (Platform Discovery) is not available. " +
+                    "Please add hg-pd-client and hg-pd-grpc dependencies " +
+                    "to the classpath.");
+        }
+
         PDHugeClientFactory factory = new PDHugeClientFactory(this.pdPeers);
         try {
             return factory.createAuthClient(cluster, graphSpace, graph, null,

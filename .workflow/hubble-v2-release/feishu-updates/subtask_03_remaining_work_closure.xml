@@ -1,0 +1,38 @@
+<hr/>
+<h2>Remaining Work Closure - Algorithm API and Dataset - 2026-06-09</h2>
+<callout background-color="light-yellow" border-color="yellow" text-color="yellow">
+  <p>图算法 API 已做真实 inventory：Hubble BE 的 <code>shortestPath</code> 通过；FE 列出的 16 个其他算法 slug 当前返回 <code>405</code>，记录为 Hubble UI/API integration gap 或产品边界项，不归因为 Server traverser 失败。</p>
+</callout>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Check</th>
+      <th background-color="light-gray">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Command</td><td><code>python3 .workflow/hubble-v2-release/run_algorithm_api_inventory.py</code></td></tr>
+    <tr><td>Status</td><td><code>SUCCESS</code></td></tr>
+    <tr><td>Successful endpoint</td><td><code>POST /api/v1.2/graph-connections/1/algorithms/shortestPath</code>, result <code>PATH</code>, graph_view V/E <code>6/5</code></td></tr>
+    <tr><td>Checked source/target</td><td><code>贾太公_1780981142 -> 贾蓉_1780981142</code></td></tr>
+    <tr><td>Non-success FE slugs</td><td><code>shortpath</code>, <code>allshortpath</code>, <code>paths</code>, <code>rings</code>, <code>crosspoints</code>, <code>fsimilarity</code>, <code>neighborrank</code>, <code>kneighbor</code>, <code>kout</code>, <code>customizedpaths</code>, <code>rays</code>, <code>sameneighbors</code>, <code>weightedshortpath</code>, <code>singleshortpath</code>, <code>jaccardsimilarity</code>, <code>personalrank</code></td></tr>
+    <tr><td>Observed status</td><td>All 16 FE slugs returned HTTP/business <code>405</code>, <code>Request method 'POST' not supported</code></td></tr>
+  </tbody>
+</table>
+<callout background-color="light-yellow" border-color="yellow" text-color="yellow">
+  <p>数据集来源/许可已审计：<code>dataset/hlm.zip</code> 和 <code>dataset/movie 2.zip</code> 没有可验证来源、版权归属、许可证或再分发条款，当前不能纳入 ASF release artifact。</p>
+</callout>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Archive</th>
+      <th background-color="light-gray">SHA-256</th>
+      <th background-color="light-gray">Disposition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>dataset/hlm.zip</code></td><td><code>c1286d5d1cb07e635867b784bcdecd41fb744ce846b32906400f259d151a0ec0</code></td><td>Local smoke-test input only</td></tr>
+    <tr><td><code>dataset/movie 2.zip</code></td><td><code>6d7ad7b75b87c5fb3babbb3b6f38caae2cd2d816cf0776e55d2351cfe1b0a0b4</code></td><td>Local smoke-test input only</td></tr>
+  </tbody>
+</table>
+<p>Per CLAUDE.md, this pass marks and analyzes abnormal non-shortestPath algorithm API behavior; it does not implement missing Hubble algorithm routes.</p>

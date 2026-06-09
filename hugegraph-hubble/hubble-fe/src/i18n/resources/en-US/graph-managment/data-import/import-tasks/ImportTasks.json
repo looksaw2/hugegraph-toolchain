@@ -39,7 +39,7 @@
             "start": "Start Task",
             "resume-setting": "constinue setting",
             "resume-importing": "continue improTing",
-            "check-error-log": "check reaSon",
+            "check-error-log": "View reason",
             "delete": "delete"
         },
         "modal": {
@@ -279,7 +279,7 @@
     "server-data-import": {
         "import-settings": {
             "title": "import settings",
-            "checkIfExist": "Check if version connected by edest",
+            "checkIfExist": "Check whether edge endpoints exist",
             "requestTimesWhenInterpolationFailed": "Retry Times When Insertion Fails",
             "maximumAnalyzedErrorRow": "maximum Allowed Parsing Error ROWS",
             "requestTicksWhenInterpolationFailed": "Retry Interval for Insertion Failures/Yes",
@@ -313,7 +313,7 @@
                 "resume": "resume",
                 "retry": "Retry",
                 "abort": "abort",
-                "failed-cause": "check reaSon"
+                "failed-cause": "View reason"
             }
         },
         "hint": {

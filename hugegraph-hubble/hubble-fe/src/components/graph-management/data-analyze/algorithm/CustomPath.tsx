@@ -693,7 +693,7 @@ const CustomPath = observer(() => {
                         algorithmAnalyzerStore.removeCustomPathRule(ruleIndex);
                       }}
                     >
-                      删除
+                      {t('data-analyze.algorithm-forms.custom-path.delete')}
                     </div>
                   )}
                 </div>

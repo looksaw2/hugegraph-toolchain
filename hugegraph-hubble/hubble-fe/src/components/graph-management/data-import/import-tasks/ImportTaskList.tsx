@@ -35,8 +35,10 @@ import HintIcon from '../../../../assets/imgs/ic_question_mark.svg';
 
 const styles = {
   button: {
-    width: 78,
-    marginLeft: 12
+    width: 'auto',
+    minWidth: 78,
+    marginLeft: 12,
+    whiteSpace: 'nowrap' as const
   }
 };
 

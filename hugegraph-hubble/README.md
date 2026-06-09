@@ -12,7 +12,23 @@ graph data load, schema management, graph relationship analysis, and graphical d
 - Graph connection management, supporting to easily switch graph to operate
 - Graph data load, supporting to load large amounts of data from files into hugegraph-server
 - Schema management, supporting to easily perform schema manipulation and display
-- Graph analysis and graphical display, supporting to build a query via the gremlin or algorithms with a little effort then will get cool graphical results
+- Graph analysis and graphical display, supporting Gremlin queries and the
+  verified Hubble `shortestPath` algorithm API. Validate additional frontend
+  algorithm forms against matching backend routes before treating them as
+  release-supported Hubble features.
+
+## Hubble Algorithm API Scope
+
+For the Hubble 2.0 release-readiness flow, the verified backend algorithm
+endpoint is:
+
+```text
+POST /api/v1.2/graph-connections/{connId}/algorithms/shortestPath
+```
+
+Other HugeGraph traverser or algorithm capabilities must not be documented as
+release-supported Hubble APIs until Hubble exposes and verifies matching backend
+routes for them.
 
 ## Quick Start
 

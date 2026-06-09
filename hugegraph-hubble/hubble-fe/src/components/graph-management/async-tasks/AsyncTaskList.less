@@ -72,9 +72,16 @@
   }
 
   &-table-status-wrapper {
-    width: 58px;
-    line-height: 22px;
+    min-width: 58px;
+    min-height: 22px;
+    padding: 0 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    line-height: 20px;
     text-align: center;
+    white-space: nowrap;
 
     &.scheduling,
     &.scheduled,
@@ -93,14 +100,12 @@
     }
 
     &.success {
-      width: 44px;
       border: 1px solid #7ed988;
       background-color: #f2fff4;
       color: #39bf45;
     }
 
     &.failed {
-      width: 44px;
       border: 1px solid #ff9499;
       background-color: #fff2f2;
       color: #e64552;

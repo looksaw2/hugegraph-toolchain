@@ -18,6 +18,8 @@
 
 package org.apache.hugegraph.controller.algorithm;
 
+import java.util.Map;
+
 import org.apache.hugegraph.common.Constant;
 import org.apache.hugegraph.entity.algorithm.ShortestPath;
 import org.apache.hugegraph.entity.query.GremlinResult;
@@ -43,5 +45,12 @@ public class OltpAlgoController {
     public GremlinResult shortPath(@PathVariable("connId") int connId,
                                    @RequestBody ShortestPath body) {
         return this.service.shortestPath(connId, body);
+    }
+
+    @PostMapping("{name}")
+    public GremlinResult algorithm(@PathVariable("connId") int connId,
+                                   @PathVariable("name") String name,
+                                   @RequestBody Map<String, Object> body) {
+        return this.service.algorithm(connId, name, body);
     }
 }

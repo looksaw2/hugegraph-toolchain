@@ -436,7 +436,7 @@ public class LoadTaskService {
                          "When the ID strategy is CUSTOMIZED, you must " +
                          "select a column in the file as the id");
                 vMapping = new org.apache.hugegraph.loader.mapping.VertexMapping(idFields.get(0),
-                                                                                 true);
+                                                                                 false);
             } else {
                 assert vl.getIdStrategy().isPrimaryKey();
                 List<String> primaryKeys = vl.getPrimaryKeys();
@@ -490,11 +490,9 @@ public class LoadTaskService {
             VertexLabelEntity tvl = this.vlService.get(el.getTargetLabel(),
                                                        connId);
             Map<String, String> fieldMappings = mapping.fieldMappingToMap();
-            /*
-             * When id strategy is customize or primaryKeys contains
-             * just one field, the param 'unfold' can be true
-             */
-            boolean unfoldSource = true;
+            // Hubble doesn't expose unfold settings, so treat ID fields as
+            // scalar values by default.
+            boolean unfoldSource = false;
             if (svl.getIdStrategy().isPrimaryKey()) {
                 List<String> primaryKeys = svl.getPrimaryKeys();
                 Ex.check(sourceFields.size() >= 1 &&
@@ -505,11 +503,8 @@ public class LoadTaskService {
                 for (int i = 0; i < primaryKeys.size(); i++) {
                     fieldMappings.put(sourceFields.get(i), primaryKeys.get(i));
                 }
-                if (sourceFields.size() > 1) {
-                    unfoldSource = false;
-                }
             }
-            boolean unfoldTarget = true;
+            boolean unfoldTarget = false;
             if (tvl.getIdStrategy().isPrimaryKey()) {
                 List<String> primaryKeys = tvl.getPrimaryKeys();
                 Ex.check(targetFields.size() >= 1 &&
@@ -519,9 +514,6 @@ public class LoadTaskService {
                          "as the id");
                 for (int i = 0; i < primaryKeys.size(); i++) {
                     fieldMappings.put(targetFields.get(i), primaryKeys.get(i));
-                }
-                if (targetFields.size() > 1) {
-                    unfoldTarget = false;
                 }
             }
 

@@ -107,9 +107,9 @@
         <assembly.static.dir>${assembly.dir}/static</assembly.static.dir>
         <shell-executable>bash</shell-executable>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <compiler.source>1.8</compiler.source>
-        <compiler.target>1.8</compiler.target>
+        <java.version>11</java.version>
+        <compiler.source>11</compiler.source>
+        <compiler.target>11</compiler.target>
         <flink.version>1.13.5</flink.version>
         <flinkcdc.version>2.2.1</flinkcdc.version>
         <spark.version>3.2.2</spark.version>
@@ -127,8 +127,9 @@
         <hadoop.version>3.3.1</hadoop.version>
         <zookeeper.version>3.6.2</zookeeper.version>
         <junit.version>4.12</junit.version>
-        <mockito.version>2.25.1</mockito.version>
-        <lombok.version>1.18.8</lombok.version>
+        <mockito.version>5.20.0</mockito.version>
+        <lombok.version>1.18.30</lombok.version>
+        <jacoco.version>0.8.12</jacoco.version>
         <commons.io.version>2.8.0</commons.io.version>
         <commons.lang3.version>3.9</commons.lang3.version>
         <commons.compress.version>1.21</commons.compress.version>
@@ -479,7 +480,6 @@
                         <exclude>CONFIG.ini</exclude>
                         <exclude>GROUPS</exclude>
                         <exclude>OWNERS</exclude>
-                        <exclude>DISCLAIMER</exclude>
                         <!-- FE-Hubble -->
                         <exclude>**/*.json</exclude>
                         <exclude>**/*.lock</exclude>

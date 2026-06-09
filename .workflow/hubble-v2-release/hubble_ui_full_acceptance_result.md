@@ -1,0 +1,15 @@
+### UI Full Acceptance - 2026-06-09
+- Status: `SUCCESS`
+- Browser: `chromium`
+- Hubble URL: `http://127.0.0.1:8088`
+- Selected graph connection: `1/AlgorithmApiInventory/hugegraph`
+- Backend snapshots: import jobs=`0`, async tasks=`92`, property keys=`123`, vertex labels=`42`, edge labels=`29`, vertex indexes=`3`
+- Covered areas: `graph management search/create/edit/visit; data analyze gremlin query and algorithm form; sidebar navigation expand/collapse and main route jumps; metadata list tabs/create entries/graph mode; data import list/create modal/job details when available; async task list/search/result when available; desktop and mobile rendering; console/page/request error collection`
+- Console errors: `0`
+- Page errors: `0`
+- Failed requests: `0`
+- Severe console errors: `0`
+- Severe failed requests: `0`
+- Import detail skipped: `No SUCCESS/FAILED import job exists in current Hubble metadata`
+- Screenshots: `/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots`
+- Hubble stop: `stopped HugeGraphHubble`

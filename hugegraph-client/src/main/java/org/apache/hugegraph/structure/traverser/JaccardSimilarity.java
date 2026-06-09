@@ -17,29 +17,44 @@
 
 package org.apache.hugegraph.structure.traverser;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import lombok.Setter;
 
 public class JaccardSimilarity {
 
-    @JsonProperty("jaccard_similarity")
-    @Setter
-    private Map<Object, Double> similarsMap;
+    private Object similarsMap;
     @JsonProperty
     private ApiMeasure measure;
 
-    public Map<Object, Double> similarsMap() {
-        return this.similarsMap;
+    @SuppressWarnings("unchecked")
+    public Map<Object, Object> similarsMap() {
+        if (this.similarsMap == null) {
+            return null;
+        }
+        if (this.similarsMap instanceof Map) {
+            return (Map<Object, Object>) this.similarsMap;
+        }
+        return Collections.singletonMap("jaccard_similarity", this.similarsMap);
     }
 
     // TODO: Temp implementation?
+    @JsonProperty("jaccard_similarity")
+    @JsonAlias("similarsMap")
     public Object getJaccardSimilarity() {
-        // get first element from the map
-        return this.similarsMap.entrySet().iterator().next().getValue();
+        if (!(this.similarsMap instanceof Map)) {
+            return this.similarsMap;
+        }
+
+        Map<Object, Object> map = this.similarsMap();
+        if (map.size() == 1) {
+            return map.entrySet().iterator().next().getValue();
+        }
+        return map;
     }
 
     public ApiMeasure measure() {
@@ -47,14 +62,29 @@ public class JaccardSimilarity {
     }
 
     public int size() {
-        return this.similarsMap.size();
+        return this.similarsMap().size();
     }
 
     public Set<Object> keySet() {
-        return this.similarsMap.keySet();
+        return this.similarsMap().keySet();
     }
 
-    public Double get(Object key) {
-        return this.similarsMap.get(key);
+    public Object get(Object key) {
+        return this.similarsMap().get(key);
+    }
+
+    @JsonProperty("jaccard_similarity")
+    @JsonAlias("similarsMap")
+    public void setJaccardSimilarity(Object jaccardSimilarity) {
+        this.similarsMap = jaccardSimilarity;
+    }
+
+    @JsonIgnore
+    public void setSimilarsMap(Map<Object, Object> similarsMap) {
+        this.similarsMap = similarsMap;
+    }
+
+    public void setMeasure(ApiMeasure measure) {
+        this.measure = measure;
     }
 }

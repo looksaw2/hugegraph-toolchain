@@ -1,0 +1,23 @@
+<hr/>
+<h2>CC Gap Closure - 2026-06-09</h2>
+<callout background-color="light-green" border-color="green" text-color="green">
+  <p>The final candidate binary inventory supersedes the earlier stale legal over-inclusion concern. The questioned dependencies are present in the rebuilt tarball, so their legal entries are required for this candidate.</p>
+</callout>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Inventory Item</th>
+      <th background-color="light-gray">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Candidate</td><td><code>hugegraph-hubble/target/apache-hugegraph-hubble-1.7.0.tar.gz</code></td></tr>
+    <tr><td>Timestamp</td><td><code>2026-06-09 12:56:40 +0800</code></td></tr>
+    <tr><td>Size</td><td><code>197714261</code> bytes</td></tr>
+    <tr><td>Library inventory</td><td><code>270</code> lib jars and <code>287</code> top-level <code>licenses/LICENSE-*.txt</code> files</td></tr>
+    <tr><td>Excluded residue</td><td>No <code>dataset/</code>, <code>logs/</code>, <code>upload-files/</code>, H2 db files, <code>bin/pid</code>, or root <code>*.pid</code> in the tarball</td></tr>
+    <tr><td>Questioned dependencies</td><td><code>animal-sniffer-annotations</code>, <code>commons-collections4</code>, <code>grpc-*</code>, <code>hg-pd-*</code>, <code>parboiled-core</code>, <code>perfmark-api</code>, and <code>proto-google-common-protos</code> jars are present</td></tr>
+    <tr><td>Legal files</td><td>Matching license files and root <code>LICENSE</code> entries are present for the directly questioned dependencies</td></tr>
+  </tbody>
+</table>
+<p>Dataset zip archives are treated as local smoke-test inputs only. <code>.gitignore</code>, <code>README.md</code>, and <code>dataset/README.md</code> now state that provenance, license, and redistribution review is required before any ASF release use.</p>

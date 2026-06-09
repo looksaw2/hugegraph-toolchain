@@ -27,6 +27,7 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -292,10 +293,14 @@ public class FileUploadController {
         // Difficult: how to determine whether the file is csv or text
         log.debug("File content type: {}", file.getContentType());
 
-        String format = FilenameUtils.getExtension(fileName);
+        String format = FilenameUtils.getExtension(fileName).toLowerCase(Locale.ROOT);
         List<String> formatWhiteList = this.config.get(
                 HubbleOptions.UPLOAD_FILE_FORMAT_LIST);
-        Ex.check(formatWhiteList.contains(format),
+        boolean allowed = formatWhiteList.stream()
+                                         .map(item -> item == null ? "" :
+                                                      item.trim().toLowerCase(Locale.ROOT))
+                                         .anyMatch(format::equals);
+        Ex.check(allowed,
                  "load.upload.file.format.unsupported");
     }
 

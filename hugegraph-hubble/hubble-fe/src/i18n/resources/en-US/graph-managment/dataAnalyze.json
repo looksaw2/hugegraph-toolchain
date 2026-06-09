@@ -5,12 +5,12 @@
             "algorithm-analyze": "Algorithm analysis"
         },
         "manipulations": {
-            "execution": "implement",
-            "favorite": "collect",
-            "reset": "Repossess"
+            "execution": "Execute",
+            "favorite": "Favorite",
+            "reset": "Reset"
         },
         "hint": {
-            "graph-disabled": "This figure is not available"
+            "graph-disabled": "Graph view is not available"
         },
         "algorithm-list": {
             "title": "Algorithm directory",
@@ -50,7 +50,7 @@
                     "input-positive-integer-or-negative-one-capacity": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "input-positive-integer-or-negative-one-limit": "Please fill in an integer of -1 or greater than 0, and default to 10",
                     "input-positive-integer": "Please fill in an integer greater than 0",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -81,7 +81,7 @@
                     "input-positive-integer-or-negative-one-capacity": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "input-positive-integer-or-negative-one-limit": "Please fill in an integer of -1 or greater than 0, and default to 10",
                     "input-positive-integer": "Please fill in an integer greater than 0",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -112,7 +112,7 @@
                     "input-positive-integer-or-negative-one-capacity": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "input-integer": "Please fill in an integer that is greater than or equal to 0, and defaults to 0",
                     "input-positive-integer": "Please fill in an integer greater than 0",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -145,7 +145,7 @@
                     "input-positive-integer-or-negative-one-capacity": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "input-positive-integer": "Please fill in an integer greater than 0",
                     "input-integer": "Please fill in an integer that is greater than or equal to 0, and defaults to 0",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -178,7 +178,7 @@
                     "input-positive-integer-or-negative-one-capacity": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "input-positive-integer-or-negative-one-limit": "Please fill in an integer of -1 or greater than 0, and default to 10",
                     "input-positive-integer": "Please fill in an integer greater than 0",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -229,6 +229,7 @@
                     "positive-integer-or-negative-one-only": "Please fill in an integer of -1 or greater than 0",
                     "input-filtered-property": "Please select the attribute you need to filter",
                     "no-properties": "No attribute",
+                    "no-edge-types": "No edge types",
                     "no-vertex-type": "No -free type",
                     "similarity": "Please enter the number of (0-1]"
                 },
@@ -243,7 +244,7 @@
                 },
                 "validations": {
                     "no-empty": "This item cannot be empty",
-                    "no-edge-typs": "Infinite type",
+                    "no-edge-typs": "No edge types",
                     "integer-only": "Please fill in an integer more than or equal to 0",
                     "positive-integer-or-negative-one-only": "Please fill in an integer of -1 or greater than 0",
                     "postive-integer-only": "Please fill in an integer greater than 0",
@@ -272,6 +273,7 @@
                     "input-positive-integer-or-negative-one-max-degree": "Please fill in an integer of -1 or greater than 0, the default is 10000",
                     "input-positive-integer-or-negative-one-capacity": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "input-positive-integer": "Please fill in an integer greater than 0",
+                    "no-edge-types": "No edge types",
                     "range": "Scope (0-1]"
                 },
                 "hint": {
@@ -280,7 +282,7 @@
                 },
                 "validations": {
                     "no-empty": "This item cannot be empty",
-                    "no-edge-typs": "Infinite type",
+                    "no-edge-typs": "No edge types",
                     "range": "Please fill in the value greater than 0 and less than equal to 1",
                     "integer-only-lt-1000": "Please fill in an integer with an integer greater than equal to 0 less than 1000",
                     "postive-integer-only": "Please fill in an integer greater than 0",
@@ -304,7 +306,7 @@
                     "input-positive-integer-or-negative-one-max-degree": "Please fill in an integer of -1 or greater than 0, the default is 10000",
                     "input-positive-integer-or-negative-one-limit": "Please fill in an integer of -1 or greater than 0, and default to 10",
                     "input-positive-integer": "Please fill in an integer greater than 0",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -334,7 +336,7 @@
                     "input-positive-integer-or-negative-one-capacity": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "input-positive-integer-or-negative-one-limit": "Please fill in an integer of -1 or greater than 0, and default to 10",
                     "input-positive-integer": "Please fill in an integer greater than 0",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -381,9 +383,10 @@
                     "select-property": "Please select the attribute",
                     "no-vertex-type": "No -free type",
                     "no-vertex-property": "Non -point attribute",
-                    "no-edge-type": "Infinite type",
-                    "no-edge-property": "Infinite attribute",
-                    "no-properties": "No attribute"
+                    "no-edge-type": "No edge type",
+                    "no-edge-property": "No edge properties",
+                    "no-properties": "No properties",
+                    "no-property": "No properties"
                 },
                 "hint": {
                     "top": "In each layer, there are n results with only the highest weight of the rights in the result",
@@ -398,7 +401,7 @@
                 },
                 "validations": {
                     "no-empty": "This item cannot be empty",
-                    "no-edge-typs": "Infinite type",
+                    "no-edge-typs": "No edge types",
                     "range": "Please fill in the value greater than 0 and less than equal to 1",
                     "integer-only": "Please fill in an integer more than or equal to 0",
                     "postive-integer-only": "Please fill in an integer greater than 0",
@@ -427,7 +430,7 @@
                     "input-positive-integer-or-negative-one-max-degree": "Please fill in an integer of -1 or greater than 0, the default is 10000",
                     "input-positive-integer-or-negative-one-capacity": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "input-positive-integer-or-negative-one-limit": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -455,7 +458,7 @@
                     "input-positive-integer-or-negative-one-max-degree": "Please fill in an integer of -1 or greater than 0, the default is 10000",
                     "input-positive-integer-or-negative-one-limit": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "input-positive-integer": "Please fill in an integer greater than 0",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -491,7 +494,7 @@
                     "select-property": "Please select the attribute",
                     "input-positive-integer": "Please fill in an integer greater than 0, default to 0",
                     "no-property": "No attribute value to digital type attributes",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -526,7 +529,7 @@
                     "input-positive-integer-or-negative-one-capacity": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "input-positive-integer-or-negative-one-limit": "Please fill in an integer of -1 or greater than 0, and default to 10",
                     "no-property": "If you do not fill in the weight of 1.0",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -554,7 +557,7 @@
                     "input-other-id": "Please enter the ID different from vertex 1",
                     "input-positive-integer": "Please fill in an integer greater than 0",
                     "input-positive-integer-or-negative-one-max-degree": "Please fill in an integer of -1 or greater than 0, the default is 10000",
-                    "no-edge-types": "Infinite type"
+                    "no-edge-types": "No edge types"
                 },
                 "hint": {
                     "max-depth": "In order to ensure performance, it is recommended not to exceed 10 steps. Recommend 5 steps",
@@ -589,6 +592,7 @@
                     "input-positive-integer-or-negative-one-degree": "Please fill in an integer of -1 or greater than 0, the default is 10000",
                     "input-positive-integer-or-negative-one-limit": "Please fill in an integer of -1 or greater than 0, the default is 10000,000",
                     "select-edge": "Please select the side type",
+                    "no-edge-types": "No edge types",
                     "input-positive-integer": "Please fill in an integer greater than 0",
                     "alpha": "Please enter the number of (0-1]",
                     "max_depth": "Please enter the number of (0-50]"
@@ -600,7 +604,7 @@
                 },
                 "validations": {
                     "no-empty": "This item cannot be empty",
-                    "no-edge-typs": "Infinite type",
+                    "no-edge-typs": "No edge types",
                     "alpha-range": "Please fill in the value greater than 0 and less than equal to 1",
                     "depth-range": "Please fill in the value of greater than 0 and less than equal to 50",
                     "postive-integer-only": "Please fill in an integer greater than 0",

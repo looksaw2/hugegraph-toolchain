@@ -1,0 +1,34 @@
+<hr/>
+<h2>Release Note / Vote Thread Snippet - 2026-06-09</h2>
+<callout emoji="✅" background-color="light-green" border-color="green" text-color="green">
+  <p>本节把最终可发版口径落成可直接复制到 release note 或 vote thread 的片段，避免把未实现的算法入口描述成已支持能力。</p>
+</callout>
+<h3>Suggested Release Scope Wording</h3>
+<p>Hubble V2.0 release-readiness was verified for the core management flow: build/package/start, graph connection, schema creation, HLM dataset import, Gremlin count queries, the Hubble <code>shortestPath</code> backend algorithm API, major UI routes, runtime zh-CN/en-US language switching, and binary artifact compliance.</p>
+<h3>Verification Evidence</h3>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Area</th>
+      <th background-color="light-gray">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Hubble unit tests</td><td><code>mvn test -P unit-test -pl hugegraph-hubble/hubble-be -ntp</code> passed with <code>15</code> tests</td></tr>
+    <tr><td>Live import/query smoke</td><td>HLM smoke imported <code>41</code> vertices and <code>51</code> edges; Hubble and direct Server counts matched</td></tr>
+    <tr><td>Algorithm API</td><td><code>POST /api/v1.2/graph-connections/{connId}/algorithms/shortestPath</code> returned <code>PATH</code> with graph view V/E <code>6/5</code></td></tr>
+    <tr><td>UI browser smoke</td><td>Major graph-management routes rendered with <code>0</code> console errors, <code>0</code> page errors, and <code>0</code> failed requests</td></tr>
+    <tr><td>UI full acceptance</td><td><code>31</code> screenshots captured across desktop/mobile flows with no severe browser failures</td></tr>
+    <tr><td>Runtime i18n</td><td>AppBar switch <code>zh-CN -&gt; en-US -&gt; zh-CN</code> passed with no browser errors</td></tr>
+    <tr><td>Binary inventory</td><td>Final Hubble tarball had <code>270</code> lib jars and <code>287</code> license files; no <code>dataset/</code>, source maps, Node/Yarn runtime, logs, pid files, upload files, or H2 runtime database files</td></tr>
+  </tbody>
+</table>
+<h3>Required Known Scope Notes</h3>
+<ul>
+  <li>Hubble algorithm API verification covers <code>shortestPath</code> only.</li>
+  <li>The additional frontend algorithm slugs checked in this candidate returned HTTP/business <code>405</code> from Hubble BE and should not be claimed as release-supported Hubble backend APIs unless matching routes are implemented and verified.</li>
+  <li><code>dataset/hlm.zip</code> and <code>dataset/movie 2.zip</code> are local smoke-test inputs only. They are ignored/untracked in this workspace and excluded from ASF source and binary release artifacts until provenance, copyright ownership, license, and redistribution terms are reviewed.</li>
+  <li>Final ASF vote review should still validate the source release, signatures, checksums, LICENSE, NOTICE, and dependency license alignment for the actual release candidate artifact.</li>
+</ul>
+<h3>Suggested Vote Thread Paragraph</h3>
+<blockquote>For Hubble V2.0, this candidate has been smoke-tested through build/package, startup, HLM import, Gremlin query comparison with HugeGraph Server, <code>shortestPath</code> algorithm API verification, UI browser acceptance, runtime i18n switching, and binary inventory checks. The verified Hubble algorithm API scope is <code>shortestPath</code>; additional frontend algorithm forms are treated as product boundary items until corresponding Hubble backend routes are implemented and verified. Local dataset archives under <code>dataset/</code> are not part of the source or binary release artifacts.</blockquote>

@@ -25,7 +25,7 @@ HugeGraph Spark Connector is a Spark connector application for reading and writi
 
 Required:
 
-- Java 8+
+- Java 11+
 - Maven 3.6+
 
 To build without executing tests:

@@ -1,0 +1,12 @@
+### UI Runtime i18n Switch Smoke - 2026-06-09
+- Status: `SUCCESS`
+- Browser: `chromium`
+- Hubble URL: `http://127.0.0.1:8088`
+- Flow: `zh-CN -> en-US -> zh-CN` through the visible AppBar language selector
+- Console errors: `0`
+- Page errors: `0`
+- Failed requests: `0`
+- Severe console errors: `0`
+- Severe failed requests: `0`
+- Screenshots: `/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-i18n-switch-screenshots`
+- Hubble stop: `stopped HugeGraphHubble`

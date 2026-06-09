@@ -45,7 +45,8 @@ public class JaccardSimilarityAPI extends TraversersAPI {
     }
 
     private static JaccardSimilarity deserializeJaccardSimilarity(RestResult result) {
-        if (result.content().contains("similarsMap")) {
+        if (result.content().contains(JACCARD_SIMILARITY) ||
+            result.content().contains("similarsMap")) {
             JaccardSimilarity jaccard = result.readObject(JaccardSimilarity.class);
             E.checkState(jaccard.similarsMap() != null,
                          "The result doesn't have key '%s'", JACCARD_SIMILARITY);
@@ -53,7 +54,7 @@ public class JaccardSimilarityAPI extends TraversersAPI {
         } else {
             JaccardSimilarity jaccard = new JaccardSimilarity();
             @SuppressWarnings("unchecked")
-            Map<Object, Double> map = result.readObject(Map.class);
+            Map<Object, Object> map = result.readObject(Map.class);
             jaccard.setSimilarsMap(map);
             return jaccard;
         }

@@ -1,0 +1,49 @@
+{
+  "started_at": "2026-06-09T11:02:58.757Z",
+  "status": "SUCCESS",
+  "checks": {
+    "hubble_start": "Starting Hubble in daemon mode...\n.....OK\nlogging to /home/looksaw/hugegraph-toolchain/hugegraph-hubble/hubble-dist/apache-hugegraph-hubble-1.7.0/logs/hugegraph-hubble.log, please check it",
+    "home": {
+      "route": "/",
+      "title": "HugeGraph",
+      "text_sample": "图管理 中文 图管理 创建图 图ID AlgorithmApiInventory 图名称 hugegraph 主机名 127.0.0.1 端口号 8080 创建时间 2026-06-09 18:50:08 访 问 更 多",
+      "screenshot": "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-browser-smoke-screenshots/home.png"
+    },
+    "connection_count": 1,
+    "routes": [
+      {
+        "route": "/graph-management/1/data-analyze",
+        "title": "HugeGraph",
+        "text_sample": "图管理 中文 G 数据分析 元数据配置 数据导入 任务管理 Gremlin 分析 算法分析 请输入查询语句 1 ​ 收起 执行查询 收 藏 清 空 图 表格 Json 暂无数据结果 执行记录 收藏的查询 时间 执行类型 执行内容 状态 耗时 操作 2026-06-09 18:50:12 算法查询 ShortestPath(source=a_1781002198, target=d_1781002198, direction=BOTH, label=AlgoEdge_1781002198, maxDepth=4, maxDegree=10000, skipDegree=0, capacity=1",
+        "screenshot": "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-browser-smoke-screenshots/data-analyze.png"
+      },
+      {
+        "route": "/graph-management/1/metadata-configs",
+        "title": "HugeGraph",
+        "text_sample": "图管理 中文 G 数据分析 元数据配置 数据导入 任务管理 列表模式 图模式 属性 顶点类型 边类型 属性索引 创 建 复 用 属性名称 数据类型 基数 操作 smoke_name_1780981142 string single 删除 smoke_sex_1780981142 string single 删除 smoke_feature_1780981142 string single 删除 smoke_relation_1780981142 string single 删除 smoke_age_1780981142 int single 删除 smoke_title_1780981142 ",
+        "screenshot": "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-browser-smoke-screenshots/metadata-configs.png"
+      },
+      {
+        "route": "/graph-management/1/data-import/import-manager",
+        "title": "HugeGraph",
+        "text_sample": "图管理 中文 G 数据分析 元数据配置 数据导入 任务管理 导入任务 创 建 任务名称 大小 创建时间 状态 任务耗时 操作 您暂时还没有任何任务，立即创建 创 建",
+        "screenshot": "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-browser-smoke-screenshots/data-import.png"
+      },
+      {
+        "route": "/graph-management/1/async-tasks",
+        "title": "HugeGraph",
+        "text_sample": "图管理 中文 G 数据分析 元数据配置 数据导入 任务管理 任务管理 任务ID 任务名称 任务类型 创建时间 耗时 状态 操作 282 g.E().drop() Gremlin任务 2026-06-04 08:05:21 1s 230ms 成功 查看结果 删除 281 EDGE_LABEL:45:created 删除元数据 2026-06-04 08:05:18 3ms 成功 删除 280 EDGE_LABEL:44:created 删除元数据 2026-06-04 08:05:18 2ms 成功 删除 279 EDGE_LABEL:43:created 删除元数据 2026-06-04 08",
+        "screenshot": "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-browser-smoke-screenshots/async-tasks.png"
+      }
+    ],
+    "console_errors": [],
+    "page_errors": [],
+    "failed_requests": [],
+    "hubble_stop": [
+      "stopped HugeGraphHubble",
+      0
+    ]
+  },
+  "browser": "chromium",
+  "finished_at": "2026-06-09T11:03:18.031Z"
+}

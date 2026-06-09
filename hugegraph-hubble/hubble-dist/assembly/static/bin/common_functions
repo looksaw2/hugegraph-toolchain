@@ -34,6 +34,21 @@ function read_property() {
     cat "${file_name}" | sed -n -e "s/^[ ]*//g;/^#/d;s/^$property_name=//p" | tail -1
 }
 
+function probe_http_status() {
+    local server_url=$1
+    curl -o /dev/null -s -w %{http_code} "${server_url}" || true
+}
+
+function probe_host() {
+    local host=$1
+    if [[ -z "${host}" || "${host}" == "0.0.0.0" ||
+          "${host}" == "::" || "${host}" == "[::]" ]]; then
+        echo "127.0.0.1"
+    else
+        echo "${host}"
+    fi
+}
+
 # wait_for_startup friendly_name host port timeout_s
 function wait_for_startup() {
     local server_url=$1
@@ -44,8 +59,8 @@ function wait_for_startup() {
 
     while [[ ${now_s} -le ${stop_s} ]]; do
         echo -n .
-        status=$(curl -o /dev/null -s -w %{http_code} "${server_url}")
-        if [[ ${status} -eq 200 ]]; then
+        status=$(probe_http_status "${server_url}")
+        if [[ "${status}" == "200" ]]; then
             echo "OK"
             return 0
         fi

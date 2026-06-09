@@ -119,6 +119,20 @@
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>clean-stale-dist</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <delete dir="${top.level.dir}/${final.name}" />
+                                <delete dir="${current.basedir}/${final.name}" />
+                                <delete file="${top.level.dir}/target/${final.name}.tar.gz" />
+                            </tasks>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <phase>package</phase>
                         <goals>
                             <goal>run</goal>
@@ -133,8 +147,11 @@
                                     cd ${top.level.dir} &amp;&amp; pwd
                                     rm -rf ${final.name}/ui
                                     cp -r ${hubble-fe.dir}/build ${final.name}/ui
+                                    rm -rf ${final.name}/logs ${final.name}/upload-files
+                                    rm -f ${final.name}/db.mv.db ${final.name}/db.trace.db ${final.name}/*.pid ${final.name}/bin/pid
 
                                     tar -zcvf ${top.level.dir}/target/${final.name}.tar.gz ${final.name} || exit 1
+                                    rm -rf ${current.basedir}/${final.name}
                                     cp -r ${final.name} ./hubble-dist
                                     echo -n "${final.name} tar.gz available at: "
                                     echo "${top.level.dir}/target/${final.name}.tar.gz"

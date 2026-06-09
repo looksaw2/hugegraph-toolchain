@@ -1,0 +1,35 @@
+<hr/>
+<h2>Final Traceability Review - 2026-06-09</h2>
+<callout background-color="light-yellow" border-color="yellow" text-color="yellow">
+  <p>本节修正 CC 汇总中容易误读的地方：Hubble release-readiness 核心链路已验证，但算法支持范围不能写成所有 UI 算法均通过。</p>
+</callout>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Requirement</th>
+      <th background-color="light-gray">Result</th>
+      <th background-color="light-gray">Release Interpretation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Build / package / start</td><td>Complete</td><td>Core build gate satisfied</td></tr>
+    <tr><td>Dataset import and Gremlin query</td><td>Complete</td><td>HLM smoke imported <code>41</code> vertices and <code>51</code> edges; Hubble and Server counts matched</td></tr>
+    <tr><td>Graph algorithm API</td><td>Inventoried</td><td><code>shortestPath</code> works; 16 additional FE slugs return <code>405</code> and must be treated as unsupported/product-boundary unless implemented</td></tr>
+    <tr><td>ASF binary compliance</td><td>Complete</td><td>Final Hubble tarball has no <code>dataset/</code>, runtime residue, source maps, Node/Yarn runtime, or unknown binary residue</td></tr>
+    <tr><td>Runtime i18n</td><td>Complete</td><td>English render and real AppBar <code>zh-CN -&gt; en-US -&gt; zh-CN</code> switch passed with zero browser errors</td></tr>
+    <tr><td>Dataset provenance</td><td>Audited</td><td><code>dataset/hlm.zip</code> and <code>dataset/movie 2.zip</code> are local-only smoke inputs and are excluded from ASF release artifacts while provenance is unverified</td></tr>
+  </tbody>
+</table>
+<h3>Corrections to CC Summary</h3>
+<ul>
+  <li><code>dataset/*.zip</code> is not tracked by Git in this workspace; <code>git ls-files dataset</code> is empty and <code>.gitignore</code> ignores <code>dataset/*.zip</code>.</li>
+  <li>The Hubble tarball does not include <code>dataset/</code>.</li>
+  <li>The algorithm gate should be phrased as <code>shortestPath</code> passed plus non-shortestPath API gap recorded, not as all algorithms passed.</li>
+  <li>"No release blocker" is valid for the verified release scope only: build, start, import, Gremlin, <code>shortestPath</code>, UI smoke, i18n, and binary compliance.</li>
+</ul>
+<h3>Release Note Items</h3>
+<ul>
+  <li>State that Hubble algorithm API verification covers <code>shortestPath</code>.</li>
+  <li>Do not claim support for additional algorithm frontend forms/routes until matching Hubble backend APIs are implemented and verified.</li>
+  <li>State that local dataset archives are excluded from source and binary release artifacts until provenance and license terms are reviewed.</li>
+</ul>

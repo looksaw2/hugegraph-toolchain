@@ -24,7 +24,18 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         EntityUtilTest.class,
-        FileUtilTest.class
+        ExTest.class,
+        ExceptionAdvisorTest.class,
+        FileUtilTest.class,
+        FileUploadControllerTest.class,
+        GremlinQueryControllerTest.class,
+        GremlinQueryServiceTest.class,
+        GremlinUtilTest.class,
+        JobManagerServiceTest.class,
+        LoadTaskServiceTest.class,
+        OltpAlgoServiceTest.class,
+        SchemaControllerTest.class,
+        SchemaServiceTest.class
 })
 public class UnitTestSuite {
 

@@ -1,0 +1,21 @@
+<hr/>
+<h2>Remaining Work Closure - Dataset Provenance - 2026-06-09</h2>
+<callout background-color="light-yellow" border-color="yellow" text-color="yellow">
+  <p>内置数据集问题已收敛为 release 排除结论：两个本地 zip 均缺少来源、版权、许可证和再分发证据，当前不能纳入 ASF source release、binary convenience artifact、文档包或 ASF mirror。</p>
+</callout>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Evidence</th>
+      <th background-color="light-gray">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>git ls-files dataset</code></td><td>Empty for the local zip archives</td></tr>
+    <tr><td>Archive content search</td><td>No source URL, copyright statement, license, permission grant, or redistribution terms found</td></tr>
+    <tr><td><code>.gitignore</code></td><td><code>dataset/*.zip</code> ignored by default</td></tr>
+    <tr><td>Binary inventory</td><td>Rebuilt Hubble tarball does not contain <code>dataset/</code></td></tr>
+    <tr><td>README update</td><td>README and <code>dataset/README.md</code> now state local-only and release exclusion policy</td></tr>
+  </tbody>
+</table>
+<p>Recommended future release path: replace them with a small synthetic dataset created for the project, committed as transparent text/JSON/Groovy source files with Apache-2.0 provenance.</p>

@@ -1,0 +1,158 @@
+{
+  "started_at": "2026-06-09T11:04:52.854Z",
+  "status": "SUCCESS",
+  "browser": "chromium",
+  "hubble_url": "http://127.0.0.1:8088",
+  "checks": {
+    "hubble_preexisting": false,
+    "hubble_start": "Starting Hubble in daemon mode...\n.....OK\nlogging to /home/looksaw/hugegraph-toolchain/hugegraph-hubble/hubble-dist/apache-hugegraph-hubble-1.7.0/logs/hugegraph-hubble.log, please check it",
+    "hubble_health": {
+      "status": "UP"
+    },
+    "connection_snapshot": {
+      "count": 1,
+      "selected": {
+        "id": 1,
+        "name": "AlgorithmApiInventory",
+        "graph": "hugegraph",
+        "host": "127.0.0.1",
+        "port": 8080,
+        "enabled": true
+      }
+    },
+    "backend_snapshots": {
+      "import_jobs": 0,
+      "async_tasks": 92,
+      "property_keys": 123,
+      "vertex_labels": 42,
+      "edge_labels": 29,
+      "vertex_property_indexes": 3
+    },
+    "graph_management": {
+      "connection": {
+        "id": 1,
+        "name": "AlgorithmApiInventory",
+        "graph": "hugegraph",
+        "host": "127.0.0.1",
+        "port": 8080,
+        "timeout": 60,
+        "username": "",
+        "password": "",
+        "enabled": true,
+        "disable_reason": "",
+        "create_time": "2026-06-09 18:50:08"
+      },
+      "disabled_edit_inputs": 4,
+      "final_route": "/graph-management/1/data-analyze",
+      "text_sample": "图管理 中文 G 数据分析 元数据配置 数据导入 任务管理 Gremlin 分析 算法分析 请输入查询语句 1 ​ 收起 执行查询 收 藏 清 空 图 表格 Json 暂无数据结果 执行记录 收藏的查询 时间 执行类型 执行内容 状态 耗时 操作 暂无数据",
+      "screenshot": "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/graph-management-visit-data-analyze.png"
+    },
+    "sidebar_navigation": {
+      "covered": [
+        "expand",
+        "collapse",
+        "data analyze",
+        "metadata",
+        "data import",
+        "async tasks"
+      ],
+      "text_sample": "图管理 中文 G 数据分析 元数据配置 数据导入 任务管理 Gremlin 分析 算法分析 请输入查询语句 1 ​ 收起 执行查询 收 藏 清 空 图 表格 Json 暂无数据结果 执行记录 收藏的查询 时间 执行类型 执行内容 状态 耗时 操作 2026-06-09 18:50:12 算法查询 ShortestPath(source=a_1781002198, target=d_1781002198, direction=BOTH, label=AlgoEdge_1781002198, maxDepth=4, maxDegree=10000, skipDegree=0, capacity=10000000) 成功 -0.001s 收藏加载语句 1",
+      "screenshots": [
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/sidebar-expanded.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/sidebar-collapsed.png"
+      ]
+    },
+    "data_analyze": {
+      "gremlin_query": "g.V().limit(1)",
+      "execution_log_visible_rows_after_query": 0,
+      "query_text_sample": "图管理 中文 G 数据分析 元数据配置 数据导入 任务管理 Gremlin 分析 算法分析 最短路径 * 起点ID: 边类型: 全部 * 终点ID: 最大度数: * 方向: both out in 超级顶点度数: * 最大步数: 访问顶点最大值: 执 行 重 置 图 表格 Json 暂无数据结果 执行记录 收藏的查询 时间 执行类型 执行内容 状态 耗时 操作 2026-06-09 19:05:17 GREMLIN 查询 g.V().limit(1) 成功 0.115s 收藏加载语句 2026-06-09 18:50:12 算法查询 ShortestPath(source=a_1781002198, target=d_1781002198, direction=BOTH, label=AlgoEdge_1781002198, maxDepth=4, maxDegree=10000, skipDegree=0, capacity=10000000) 成功 -0.001s 收藏加载语句 1",
+      "screenshots": [
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/data-analyze-gremlin-query.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/data-analyze-algorithm-form.png"
+      ]
+    },
+    "metadata_configs": {
+      "covered": [
+        "property list",
+        "vertex type list",
+        "edge type list",
+        "property index vertex/edge tabs",
+        "property create row",
+        "vertex create page",
+        "edge create page",
+        "graph mode",
+        "graph mode create property drawer"
+      ],
+      "text_sample": "图管理 中文 G 数据分析 元数据配置 数据导入 任务管理 列表模式 图模式 创建属性 创建顶点类型 创建边类型 查看属性 创建属性 *属性名称: *数据类型: string *基数: single 创 建取 消",
+      "screenshots": [
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-property-list.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-vertex-list.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-edge-list.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-property-index-list.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-property-list-return.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-property-index-edge-tab.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-property-create-row.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-vertex-create-page.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-edge-create-page.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-graph-mode.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/metadata-graph-create-property-drawer.png"
+      ]
+    },
+    "data_import": {
+      "job_count": 0,
+      "opened_completed_job_details": false,
+      "skipped_job_details_reason": "No SUCCESS/FAILED import job exists in current Hubble metadata",
+      "text_sample": "图管理 中文 G 数据分析 元数据配置 数据导入 任务管理 导入任务 创 建 任务名称 大小 创建时间 状态 任务耗时 操作 您暂时还没有任何任务，立即创建 创 建 创建导入任务 *任务名称： 任务备注： 创 建取 消",
+      "screenshots": [
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/import-manager-list.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/import-manager-create-modal.png"
+      ]
+    },
+    "async_tasks": {
+      "task_count": 10,
+      "opened_task_result": true,
+      "skipped_task_result_reason": "",
+      "task_result_id": 282,
+      "filter_popups_checked": 2,
+      "text_sample": "图管理 中文 []",
+      "screenshots": [
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/async-task-list.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/async-task-search.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/async-task-result.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/async-task-filter-1.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/async-task-filter-2.png"
+      ]
+    },
+    "responsive_i18n": {
+      "mobile_viewport": "390x844",
+      "desktop_viewport": "1440x960",
+      "english_switch_restored_to": "zh-CN",
+      "text_sample": "图管理 中文 G 数据分析 元数据配置 数据导入 任务管理 Gremlin 分析 算法分析 请输入查询语句 1 ​ 收起 执行查询 收 藏 清 空 图 表格 Json 暂无数据结果 执行记录 收藏的查询 时间 执行类型 执行内容 状态 耗时 操作 2026-06-09 19:05:17 GREMLIN 查询 g.V().limit(1) 成功 0.115s 收藏加载语句 2026-06-09 18:50:12 算法查询 ShortestPath(source=a_1781002198, target=d_1781002198, direction=BOTH, label=AlgoEdge_1781002198, maxDepth=4, maxDegree=10000, skipDegree=0, capacity=10000000) 成功 -0.001s 收藏加载语句 1 图管理 中文 图管理 创建图 图ID AlgorithmApiInventory 图名称 hugegraph 主机名 127.0.0.1 端口号 8080 创建时间 2026-06-09 18:50:08 访 问 更",
+      "screenshots": [
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/responsive-mobile-data-analyze.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/responsive-desktop-home.png",
+        "/home/looksaw/hugegraph-toolchain/.workflow/hubble-v2-release/ui-full-acceptance-screenshots/i18n-english-home.png"
+      ]
+    },
+    "console_errors": [],
+    "page_errors": [],
+    "failed_requests": [],
+    "severe_console_errors": [],
+    "severe_failed_requests": [],
+    "hubble_stop": [
+      "stopped HugeGraphHubble",
+      0
+    ]
+  },
+  "coverage": [
+    "graph management search/create/edit/visit",
+    "data analyze gremlin query and algorithm form",
+    "sidebar navigation expand/collapse and main route jumps",
+    "metadata list tabs/create entries/graph mode",
+    "data import list/create modal/job details when available",
+    "async task list/search/result when available",
+    "desktop and mobile rendering",
+    "console/page/request error collection"
+  ],
+  "finished_at": "2026-06-09T11:06:03.512Z"
+}

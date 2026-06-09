@@ -229,6 +229,7 @@
           "positive-integer-or-negative-one-only": "请填写-1或大于0的整数",
           "input-filtered-property": "请选择需要过滤的属性",
           "no-properties": "无属性",
+          "no-edge-types": "无边类型",
           "no-vertex-type": "无顶点类型",
           "similarity": "请输入(0-1]的数字"
         },
@@ -272,6 +273,7 @@
           "input-positive-integer-or-negative-one-max-degree": "请填写-1或大于0的整数，默认为10000",
           "input-positive-integer-or-negative-one-capacity": "请填写-1或大于0的整数，默认为10000000",
           "input-positive-integer": "请填写大于0的整数",
+          "no-edge-types": "无边类型",
           "range": "范围(0-1]"
         },
         "hint": {
@@ -383,7 +385,8 @@
           "no-vertex-property": "无顶点属性",
           "no-edge-type": "无边类型",
           "no-edge-property": "无边属性",
-          "no-properties": "无属性"
+          "no-properties": "无属性",
+          "no-property": "无属性"
         },
         "hint": {
           "top": "在结果中每一层只保留权重最高的N个结果",
@@ -589,6 +592,7 @@
           "input-positive-integer-or-negative-one-degree": "请填写-1或大于0的整数，默认为10000",
           "input-positive-integer-or-negative-one-limit": "请填写-1或大于0的整数，默认为10000000",
           "select-edge": "请选择边类型",
+          "no-edge-types": "无边类型",
           "input-positive-integer": "请填写大于0的整数",
           "alpha": "请输入(0-1]的数字",
           "max_depth": "请输入(0-50]的数字"

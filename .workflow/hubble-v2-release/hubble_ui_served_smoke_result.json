@@ -1,0 +1,68 @@
+{
+  "started_at": "2026-06-09 11:47:06 +0800",
+  "status": "SUCCESS",
+  "checks": {
+    "hubble_start": "Starting Hubble in daemon mode...\n.....OK\nlogging to /home/looksaw/hugegraph-toolchain/hugegraph-hubble/hubble-dist/apache-hugegraph-hubble-1.7.0/logs/hugegraph-hubble.log, please check it",
+    "index": {
+      "content_type": "text/html;charset=UTF-8",
+      "has_root": true,
+      "asset_paths": [
+        "/favicon.ico",
+        "/manifest.json",
+        "/static/css/2.3ac93df6.chunk.css",
+        "/static/css/main.80af82d9.chunk.css",
+        "/static/js/runtime-main.92c186c6.js",
+        "/static/js/2.08b22988.chunk.js",
+        "/static/js/main.d6e26716.chunk.js"
+      ]
+    },
+    "assets": {
+      "/favicon.ico": {
+        "content_type": "image/x-icon",
+        "bytes": 4286
+      },
+      "/manifest.json": {
+        "content_type": "application/json",
+        "bytes": 306
+      },
+      "/static/css/2.3ac93df6.chunk.css": {
+        "content_type": "text/css",
+        "bytes": 771515
+      },
+      "/static/css/main.80af82d9.chunk.css": {
+        "content_type": "text/css",
+        "bytes": 109537
+      },
+      "/static/js/runtime-main.92c186c6.js": {
+        "content_type": "application/javascript",
+        "bytes": 1667
+      },
+      "/static/js/2.08b22988.chunk.js": {
+        "content_type": "application/javascript",
+        "bytes": 2237489
+      },
+      "/static/js/main.d6e26716.chunk.js": {
+        "content_type": "application/javascript",
+        "bytes": 1120460
+      }
+    },
+    "asset_manifest": {
+      "content_type": "application/json",
+      "entry_count": 34
+    },
+    "setting_config": {
+      "content_type": "application/json;charset=UTF-8",
+      "status": 200,
+      "keys": [
+        "id",
+        "locale",
+        "username"
+      ]
+    },
+    "hubble_stop": [
+      "stopped HugeGraphHubble",
+      0
+    ]
+  },
+  "finished_at": "2026-06-09 11:47:15 +0800"
+}

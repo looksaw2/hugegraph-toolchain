@@ -317,6 +317,7 @@
             "graph-create": "Create Graph",
             "create": "Create",
             "create-scuccess": "Create successful",
+            "create-success": "Create successful",
             "id": "Graph ID",
             "id-desc": "Set a unique identifier for the created graph",
             "name": "Graph Name",

@@ -1,0 +1,77 @@
+{
+  "suffix": "1781000789",
+  "started_at": "2026-06-09 18:26:29 +0800",
+  "status": "SUCCESS",
+  "dataset": "/home/looksaw/hugegraph-toolchain/dataset/movie 2.zip",
+  "checks": {
+    "hubble_start": "Starting Hubble in daemon mode...\n.......OK\nlogging to /home/looksaw/hugegraph-toolchain/hugegraph-hubble/hubble-dist/apache-hugegraph-hubble-1.7.0/logs/hugegraph-hubble.log, please check it",
+    "derived_file": "/tmp/hubble-movie-smoke-1781000789/MOVIE_SMOKE_1781000789.CSV",
+    "extracted_rows": 15368,
+    "conn_id": 1,
+    "connection_mode": "reused",
+    "schema": {
+      "property_keys": {
+        "movie_name": "movie_name_1781000789",
+        "artist_name": "artist_name_1781000789",
+        "genre_name": "genre_name_1781000789",
+        "release_year": "release_year_1781000789"
+      },
+      "labels": {
+        "movie": "Movie_1781000789",
+        "artist": "Artist_1781000789",
+        "genre": "Genre_1781000789",
+        "directed": "Directed_1781000789",
+        "acted_in": "ActedIn_1781000789",
+        "in_genre": "InGenre_1781000789"
+      }
+    },
+    "import": {
+      "job_id": 33,
+      "task_id": 33,
+      "job_status": "SUCCESS",
+      "task_status": "SUCCEED",
+      "loaded_vertices": null,
+      "loaded_edges": null,
+      "total_lines": null
+    },
+    "gremlin_counts": {
+      "movie_vertices": {
+        "server": 15038
+      },
+      "artist_vertices": {
+        "server": 14957
+      },
+      "genre_vertices": {
+        "server": 98
+      }
+    },
+    "sample_queries": {
+      "directed": {
+        "gremlin": "g.V('安藤桃子_1781000789').outE('Directed_1781000789').inV().hasId('0.5毫米_1781000789').count()",
+        "hubble": 1,
+        "server": 1
+      },
+      "acted_in": {
+        "gremlin": "g.V('安藤樱_1781000789').outE('ActedIn_1781000789').inV().hasId('0.5毫米_1781000789').count()",
+        "hubble": 1,
+        "server": 1
+      },
+      "in_genre": {
+        "gremlin": "g.V('0.5毫米_1781000789').outE('InGenre_1781000789').inV().hasId('剧情_1781000789').count()",
+        "hubble": 1,
+        "server": 1
+      }
+    },
+    "hubble_api_sample": {
+      "movie_limit_count": {
+        "hubble": 1,
+        "server": 1
+      }
+    },
+    "hubble_stop": [
+      "stopped HugeGraphHubble",
+      0
+    ]
+  },
+  "finished_at": "2026-06-09 18:26:52 +0800"
+}

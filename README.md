@@ -253,6 +253,77 @@ cd hugegraph-hubble/apache-hugegraph-hubble-*/bin
 ./stop-hubble.sh       # Stop server
 ```
 
+**Source Build Requirements**:
+- JDK 11+
+- Maven 3.6+
+- Node.js 16.x
+- yarn 1.x
+
+**Server Compatibility**:
+- Use a HugeGraph Server build from the same release line as Hubble.
+- For the Hubble 2.0 flow in this repository, the server side must expose
+  graph profile, default graph/default role, and schema template APIs.
+- When validating the 1.8.0 release train, use the matching HugeGraph Server
+  1.8.0 build, or a server build that already contains those APIs.
+
+**Hubble Algorithm API Scope**:
+- The verified Hubble backend algorithm endpoint for this release flow is
+  `POST /api/v1.2/graph-connections/{connId}/algorithms/shortestPath`.
+- Other HugeGraph traverser or algorithm capabilities should not be documented
+  as supported Hubble APIs until Hubble exposes and verifies matching backend
+  routes for them.
+- If the frontend shows additional algorithm forms, validate the matching
+  Hubble API route before treating that algorithm as a release-supported
+  Hubble feature.
+
+**Example Datasets**:
+
+The `dataset/` directory can hold local sample input for evaluation. Archives
+in this directory are smoke-test inputs only. They are not included in Apache
+HugeGraph source releases, binary convenience artifacts, documentation bundles,
+or ASF mirrors unless their provenance, license, and redistribution terms are
+reviewed and recorded for an ASF release.
+
+| Archive | Main Files | Typical Use | Expected Result |
+|---------|------------|-------------|-----------------|
+| `dataset/movie 2.zip` | `movie/movie.csv`, `movie/struct_movie.json`, `movie/schema_movie.groovy` | Movie graph import demo | Minimal `电影 -> 类型 -> 属于` mapping should produce about 15.8k `电影` vertices, 108 `类型` vertices, and about 24.7k `属于` edges |
+| `dataset/hlm.zip` | `hlm/hlm.txt`, `hlm/struct_hlm.json`, `hlm/schema_hlm.groovy` | Character relationship demo | Bundled mapping should produce 41 `人物` vertices and 51 `关系` edges |
+
+Dataset archives are intentionally excluded from release artifacts by default.
+Keep them as local inputs until the release review confirms their source,
+copyright ownership, license, and redistribution status.
+
+**Import Notes**:
+1. Create the schema first with the bundled `schema_*.groovy` files, or create
+   equivalent schema definitions in Hubble before importing data.
+2. Extract the archive locally, then upload `movie/movie.csv` from the Hubble
+   Data Import page. For `hlm.zip`, upload `hlm/hlm.txt` directly; Hubble's
+   default `upload_file.format_list` includes both `csv` and `txt`.
+3. Use `struct_movie.json` or `struct_hlm.json` as the default mapping
+   template/reference when configuring fields in the UI.
+
+**Recommended First-Run Mapping For `movie 2.zip`**:
+- File settings: `has_header=true`, `charset=UTF-8`, `delimiter=,`,
+  `date_format=yyyy`
+- List separator: `|`
+- Minimal vertex mapping:
+  - `电影`: id field `名称`, selected fields `名称`, `类型`, `发行时间`
+  - `类型`: id field `类型`, enable unfold
+- Minimal edge mapping:
+  - `属于`: source `名称`, target `类型`, enable unfold on target
+- The bundled `struct_movie.json` extends this minimal flow with `艺人` and
+  `年份` vertices plus `导演` / `演出` / `发行于` edges.
+
+**Common Import Errors**:
+- If the preview columns become `col-1`, `col-2`, ... enable `has_header=true`.
+- If movie year parsing fails, set `date_format=yyyy` instead of a full
+  timestamp format such as `yyyy-MM-dd HH:mm:ss`.
+- If import fails because required properties are missing, check that the field
+  mapping includes every required schema property.
+- If `hlm/hlm.txt` is rejected with "The upload file format is unsupported",
+  check that the binary candidate was built from a configuration containing
+  `upload_file.format_list=csv,txt`.
+
 📖 [Documentation](https://hugegraph.apache.org/docs/quickstart/hugegraph-hubble/) | 📁 [Source](./hugegraph-hubble)
 
 ---

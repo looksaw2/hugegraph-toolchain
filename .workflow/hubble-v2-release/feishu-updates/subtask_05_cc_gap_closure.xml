@@ -1,0 +1,22 @@
+<hr/>
+<h2>CC Gap Closure - 2026-06-09</h2>
+<callout background-color="light-green" border-color="green" text-color="green">
+  <p>Direct Server comparison passed on the final candidate. No Server/API gap was found in the verified schema, Gremlin count, import visibility, or shortestPath traverser flows.</p>
+</callout>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Comparison</th>
+      <th background-color="light-gray">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Command</td><td><code>python3 .workflow/hubble-v2-release/run_live_hubble_smoke.py</code></td></tr>
+    <tr><td>Status</td><td><code>SUCCESS</code></td></tr>
+    <tr><td>Suffix</td><td><code>1780981142</code></td></tr>
+    <tr><td>Schema</td><td><code>smoke_name_1780981142</code>, <code>SmokePerson_1780981142</code>, and <code>SmokeRelation_1780981142</code> were visible through direct Server schema endpoints with matching core fields</td></tr>
+    <tr><td>Gremlin counts</td><td>Hubble V/E <code>41</code>/<code>51</code>, Server V/E <code>41</code>/<code>51</code></td></tr>
+    <tr><td>shortestPath</td><td>Hubble graph_view V/E <code>6</code>/<code>5</code>, Server traverser V/E <code>6</code>/<code>5</code>, Server path length <code>6</code></td></tr>
+  </tbody>
+</table>
+<p>Hubble import remains classified as product-boundary orchestration: Hubble stores local job metadata and invokes Loader, while Server exposes the resulting graph data and schema.</p>

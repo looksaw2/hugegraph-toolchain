@@ -1,0 +1,24 @@
+<hr/>
+<h2>CC Gap Closure - 2026-06-09</h2>
+<callout background-color="light-green" border-color="green" text-color="green">
+  <p>Final candidate validation was rerun and passed for build, unit, live smoke, UI browser smoke, and UI full acceptance.</p>
+</callout>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Item</th>
+      <th background-color="light-gray">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Candidate</td><td><code>hugegraph-hubble/target/apache-hugegraph-hubble-1.7.0.tar.gz</code></td></tr>
+    <tr><td>Timestamp</td><td><code>2026-06-09 12:56:40 +0800</code></td></tr>
+    <tr><td>Size</td><td><code>197714261</code> bytes</td></tr>
+    <tr><td>Package build</td><td><code>BUILD SUCCESS</code></td></tr>
+    <tr><td>Hubble BE unit test</td><td><code>BUILD SUCCESS</code>, tests <code>15</code>, failures <code>0</code>, errors <code>0</code>, skipped <code>0</code></td></tr>
+    <tr><td>Live Hubble + Server smoke</td><td><code>SUCCESS</code></td></tr>
+    <tr><td>UI browser smoke</td><td><code>SUCCESS</code></td></tr>
+    <tr><td>UI full acceptance</td><td><code>SUCCESS</code></td></tr>
+  </tbody>
+</table>
+<p>Post-check found no remaining <code>HugeGraphHubble</code> process.</p>

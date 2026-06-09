@@ -1,0 +1,22 @@
+<hr/>
+<h2>CC Gap Closure - 2026-06-09</h2>
+<callout background-color="light-green" border-color="green" text-color="green">
+  <p>Runtime i18n and layout validation passed on the final Hubble candidate through the full Playwright acceptance script.</p>
+</callout>
+<table>
+  <thead>
+    <tr>
+      <th background-color="light-gray">Runtime Check</th>
+      <th background-color="light-gray">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Command</td><td><code>NODE_PATH=/tmp/hubble-ui-smoke-playwright/node_modules node .workflow/hubble-v2-release/run_ui_full_acceptance.js</code></td></tr>
+    <tr><td>Status</td><td><code>SUCCESS</code></td></tr>
+    <tr><td>Mobile viewport</td><td><code>390x844</code> data-analyze page rendered</td></tr>
+    <tr><td>Desktop viewport</td><td><code>1440x960</code> home page rendered</td></tr>
+    <tr><td>English render</td><td>Home page checked with English locale</td></tr>
+    <tr><td>Browser issues</td><td>console <code>0</code>, page <code>0</code>, failed requests <code>0</code>, severe console <code>0</code>, severe failed requests <code>0</code></td></tr>
+  </tbody>
+</table>
+<p>The script restored <code>localStorage.languageType</code> to <code>zh-CN</code> after validation.</p>

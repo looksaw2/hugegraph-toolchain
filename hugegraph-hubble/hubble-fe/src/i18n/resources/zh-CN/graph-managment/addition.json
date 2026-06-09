@@ -317,6 +317,7 @@
       "graph-create": "创建图",
       "create": "创建",
       "create-scuccess": "创建成功",
+      "create-success": "创建成功",
       "id": "图ID",
       "id-desc": "为创建的图设置唯一标识的ID",
       "name": "图名称",

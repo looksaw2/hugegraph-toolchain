@@ -55,7 +55,6 @@ header: # `header` section is configurations for source codes license header.
     - '.gitignore'
     - 'LICENSE'
     - 'NOTICE'
-    - 'DISCLAIMER'
     - '.serena/**'
     - '**/*.md'
     - '**/*.versionsBackup'
@@ -80,7 +79,9 @@ header: # `header` section is configurations for source codes license header.
     - 'hugegraph-client-go/go.sum'
     - 'hugegraph-client-go/Makefile'
     - 'hugegraph-client/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker'
-    # - 'hugegraph-hubble/hubble-fe/**'
+    - 'hugegraph-hubble/hubble-fe/node/**'
+    - 'hugegraph-hubble/hubble-fe/node_modules/**'
+    - 'hugegraph-hubble/hubble-fe/build/**'
   comment: on-failure # on what condition license-eye will comment on the pull request, `on-failure`, `always`, `never`.
 
   # license-location-threshold specifies the index threshold where the license header can be located,

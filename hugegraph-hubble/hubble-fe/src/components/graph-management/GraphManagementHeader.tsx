@@ -23,7 +23,9 @@ import { useTranslation } from 'react-i18next';
 
 const styles = {
   marginLeft: '20px',
-  width: 88
+  width: 'auto',
+  minWidth: 88,
+  whiteSpace: 'nowrap' as const
 };
 
 const GraphManagementHeader: React.FC = observer(() => {

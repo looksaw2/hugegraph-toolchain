@@ -78,7 +78,9 @@ import './EdgeTypeList.less';
 const styles = {
   button: {
     marginLeft: 12,
-    width: 78
+    width: 'auto',
+    minWidth: 78,
+    whiteSpace: 'nowrap' as const
   },
   header: {
     marginBottom: 16
@@ -1926,14 +1928,20 @@ const EmptyEdgeTypeHints: React.FC = observer(() => {
       <div
         style={{
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          gap: 16,
           marginTop: 24
         }}
       >
         <Button
           type="primary"
           size="large"
-          style={{ width: 128, marginRight: 16 }}
+          style={{
+            width: 'auto',
+            minWidth: 128,
+            whiteSpace: 'nowrap'
+          }}
           onClick={() => {
             edgeTypeStore.changeCurrentTabStatus('new');
           }}
@@ -1942,7 +1950,11 @@ const EmptyEdgeTypeHints: React.FC = observer(() => {
         </Button>
         <Button
           size="large"
-          style={{ width: 144 }}
+          style={{
+            width: 'auto',
+            minWidth: 144,
+            whiteSpace: 'nowrap'
+          }}
           onClick={() => {
             edgeTypeStore.changeCurrentTabStatus('reuse');
           }}

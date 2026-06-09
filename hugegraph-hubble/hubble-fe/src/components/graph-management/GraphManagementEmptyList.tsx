@@ -67,9 +67,7 @@ const GraphManagementEmptyList: React.FC = observer(() => {
             <Button
               type="primary"
               size="large"
-              style={{
-                width: 112
-              }}
+              className="graph-management-list-empty-action"
               onClick={handleLayoutSwitch(true)}
             >
               {t('addition.graphManagementEmptyList.graph-create')}

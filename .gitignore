@@ -5,6 +5,8 @@ target/
 !**/src/test/**
 **.db
 logs/
+!.workflow/hubble-v2-release/logs/
+!.workflow/hubble-v2-release/logs/*.md
 ui
 node_modules/
 upload-files/
@@ -44,7 +46,7 @@ build/
 /hubble-fe/node_modules
 /hubble-fe/.pnp
 .pnp.js
-/hugegraph-hubble/hubble-fe/node/node
+/hugegraph-hubble/hubble-fe/node/
 
 # testingå
 /hubble-fe/coverage
@@ -80,6 +82,10 @@ apache-hugegraph-*-incubating-*/
 output/
 *.war
 *.zip
+!/dataset/
+!/hugegraph-hubble/dataset/
+/dataset/*.zip
+/hugegraph-hubble/dataset/*.zip
 *.tar
 *.tar.gz*
 tree.txt
@@ -125,4 +131,6 @@ codeium-instructions.md
 *.ai-prompt.md
 WARP.md
 
+
+.gstack/
 

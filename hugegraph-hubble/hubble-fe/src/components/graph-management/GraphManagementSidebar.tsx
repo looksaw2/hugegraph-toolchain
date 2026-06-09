@@ -267,26 +267,6 @@ const GraphManagementSidebar: React.FC = observer(() => {
               <div>{t('addition.graphManagementSidebar.data-import')}</div>
             </div>
           </Menu.Item>
-          {/* <Menu.SubMenu
-            key="sub-data-import"
-            title={
-              <div className={sidebarMenuItemClassName}>
-                <img
-                  src={
-                    sidebarKey === 'import-tasks'
-                      ? DataImportIconPressed
-                      : DataImportIconNormal
-                  }
-                  alt="数据导入"
-                />
-                <div>数据导入</div>
-              </div>
-            }
-          >
-            <Menu.Item key="import-tasks">
-              <div style={{ marginLeft: 24 }}>导入任务</div>
-            </Menu.Item>
-          </Menu.SubMenu> */}
           <Menu.Item key="async-tasks">
             <div className={sidebarMenuItemClassName}>
               <img
